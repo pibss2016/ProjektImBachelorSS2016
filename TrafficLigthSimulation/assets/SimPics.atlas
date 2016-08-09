@@ -1,0 +1,320 @@
+
+SimPics.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+EastTrafficGreen
+  rotate: false
+  xy: 1, 199
+  size: 128, 32
+  orig: 128, 32
+  offset: 0, 0
+  index: -1
+EastTrafficRed
+  rotate: false
+  xy: 1, 165
+  size: 128, 32
+  orig: 128, 32
+  offset: 0, 0
+  index: -1
+EastTrafficYellow
+  rotate: false
+  xy: 131, 199
+  size: 128, 32
+  orig: 128, 32
+  offset: 0, 0
+  index: -1
+NorthTrafficGreen
+  rotate: false
+  xy: 1, 35
+  size: 32, 128
+  orig: 32, 128
+  offset: 0, 0
+  index: -1
+NorthTrafficRed
+  rotate: false
+  xy: 35, 35
+  size: 32, 128
+  orig: 32, 128
+  offset: 0, 0
+  index: -1
+NorthTrafficYellow
+  rotate: false
+  xy: 69, 35
+  size: 32, 128
+  orig: 32, 128
+  offset: 0, 0
+  index: -1
+WestTrafficGreen
+  rotate: false
+  xy: 131, 165
+  size: 128, 32
+  orig: 128, 32
+  offset: 0, 0
+  index: -1
+SouthTrafficGreen
+  rotate: false
+  xy: 103, 35
+  size: 32, 128
+  orig: 32, 128
+  offset: 0, 0
+  index: -1
+SouthTrafficRed
+  rotate: false
+  xy: 137, 35
+  size: 32, 128
+  orig: 32, 128
+  offset: 0, 0
+  index: -1
+SouthTrafficYellow
+  rotate: false
+  xy: 171, 35
+  size: 32, 128
+  orig: 32, 128
+  offset: 0, 0
+  index: -1
+WestTrafficRed
+  rotate: false
+  xy: 261, 199
+  size: 128, 32
+  orig: 128, 32
+  offset: 0, 0
+  index: -1
+WestTrafficYellow
+  rotate: false
+  xy: 1, 1
+  size: 128, 32
+  orig: 128, 32
+  offset: 0, 0
+  index: -1
+BlueCarEast
+  rotate: false
+  xy: 205, 131
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+BlueCarNorth
+  rotate: false
+  xy: 261, 165
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+BlueCarNorthEast
+  rotate: false
+  xy: 391, 199
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+BlueCarNorthWest
+  rotate: false
+  xy: 131, 1
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+BlueCarSouth
+  rotate: false
+  xy: 205, 97
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+BlueCarSouthEast
+  rotate: false
+  xy: 239, 131
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+BlueCarSouthWest
+  rotate: false
+  xy: 295, 165
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+BlueCarWest
+  rotate: false
+  xy: 425, 199
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+GreenCarEast
+  rotate: false
+  xy: 165, 1
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+GreenCarNorth
+  rotate: false
+  xy: 205, 63
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+GreenCarNorthEast
+  rotate: false
+  xy: 239, 97
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+GreenCarNorthWest
+  rotate: false
+  xy: 273, 131
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+GreenCarSouth
+  rotate: false
+  xy: 329, 165
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+GreenCarSouthEast
+  rotate: false
+  xy: 459, 199
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+GreenCarSouthWest
+  rotate: false
+  xy: 239, 63
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+GreenCarWest
+  rotate: false
+  xy: 273, 97
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+RedCarEast
+  rotate: false
+  xy: 307, 131
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+RedCarNorth
+  rotate: false
+  xy: 363, 165
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+RedCarNorthEast
+  rotate: false
+  xy: 273, 63
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+RedCarNorthWest
+  rotate: false
+  xy: 307, 97
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+RedCarSouth
+  rotate: false
+  xy: 341, 131
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+RedCarSouthEast
+  rotate: false
+  xy: 397, 165
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+RedCarSouthWest
+  rotate: false
+  xy: 307, 63
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+RedCarWest
+  rotate: false
+  xy: 341, 97
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+street
+  rotate: false
+  xy: 375, 131
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+YellowCarEast
+  rotate: false
+  xy: 431, 165
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+YellowCarNorth
+  rotate: false
+  xy: 341, 63
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+YellowCarNorthEast
+  rotate: false
+  xy: 375, 97
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+YellowCarNorthWest
+  rotate: false
+  xy: 409, 131
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+YellowCarSouth
+  rotate: false
+  xy: 375, 63
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+YellowCarSouthEast
+  rotate: false
+  xy: 409, 97
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+YellowCarSouthWest
+  rotate: false
+  xy: 409, 63
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+YellowCarWest
+  rotate: false
+  xy: 205, 29
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
