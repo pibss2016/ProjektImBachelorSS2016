@@ -46,7 +46,7 @@ public class CentralModel {
 		southOut.setJunctionPosition(JunctionPosition.START);
 		northOut.setJunctionPosition(JunctionPosition.START);
 		
-		Junction = new JunctionModel(laneLength);
+		Junction = new JunctionModel();
 		
 	}
 		
@@ -152,7 +152,7 @@ public class CentralModel {
 	
 	
 	/**
-     * Gibt die 4 Felder der Kreuzng als char[2][2] Matrix aus.
+     * Gibt die 4 Felder der Kreuzng als char[1][1] Matrix aus.
      * Moegliche Werte der Felder: R = Rotes Auto, G = Gruenes Auto,
      * Y = Gelbes Auto, B = Blaues Auto, o = Kein Auto auf Feld.
      * Relevant für Visualisierung.
@@ -163,18 +163,21 @@ public class CentralModel {
 		return Junction.getJunctionField();
 	}
 	
+	/**
+	 * Gibt Feld mit Ausrichtungen der Autos an der Kreuzung aus. 
+     * @return Laenge der Lanes
+     */
 	public CarDirection[][] getViewDirectionField(){
 		return Junction.getDirectionField();
 	}
 	
 	/**
      * Gibt Lane die aus dem Norden kommt und in die Kreuzung reinfuehrt aus.
-     * Ausgabe in Form eines char[] Arrays.
      * Moegliche Werte der Felder: R = Rotes Auto, G = Gruenes Auto,
      * Y = Gelbes Auto, B = Blaues Auto, o = Kein Auto auf Feld.
      * Relevant für Visualisierung.
      * 
-     * @return Lane die aus dem Norden kommt und in die Kreuzung reinfuehrt als char[] Array
+     * @return Lane die aus dem Norden kommt und in die Kreuzung reinfuehrt
      */
 	public char[] getViewNorthIn(){
 		return northIn.getLane();
@@ -182,12 +185,11 @@ public class CentralModel {
 	
 	/**
      * Gibt Lane die aus dem Sueden kommt und in die Kreuzung reinfuehrt aus.
-     * Ausgabe in Form eines char[] Arrays.
      * Moegliche Werte der Felder: R = Rotes Auto, G = Gruenes Auto,
      * Y = Gelbes Auto, B = Blaues Auto, o = Kein Auto auf Feld.
      * Relevant für Visualisierung.
      * 
-     * @return Lane die aus dem Sueden kommt und in die Kreuzung reinfuehrt als char[] Array
+     * @return Lane die aus dem Sueden kommt und in die Kreuzung reinfuehrt
      */
 	public char[] getViewSouthIn(){
 		return southIn.getLane();
@@ -195,12 +197,11 @@ public class CentralModel {
 	
 	/**
      * Gibt Lane die aus dem Osten kommt und in die Kreuzung reinfuehrt aus.
-     * Ausgabe in Form eines char[] Arrays.
      * Moegliche Werte der Felder: R = Rotes Auto, G = Gruenes Auto,
      * Y = Gelbes Auto, B = Blaues Auto, o = Kein Auto auf Feld.
      * Relevant für Visualisierung.
      * 
-     * @return Lane die aus dem Osten kommt und in die Kreuzung reinfuehrt als char[] Array
+     * @return Lane die aus dem Osten kommt und in die Kreuzung reinfuehrt
      */
 	public char[] getViewEastIn(){
 		return eastIn.getLane();
@@ -208,12 +209,11 @@ public class CentralModel {
 	
 	/**
      * Gibt Lane die aus dem Westen kommt und in die Kreuzung reinfuehrt aus.
-     * Ausgabe in Form eines char[] Arrays.
      * Moegliche Werte der Felder: R = Rotes Auto, G = Gruenes Auto,
      * Y = Gelbes Auto, B = Blaues Auto, o = Kein Auto auf Feld.
      * Relevant für Visualisierung.
      * 
-     * @return Lane die aus dem Westen kommt und in die Kreuzung reinfuehrt als char[] Array
+     * @return Lane die aus dem Westen kommt und in die Kreuzung reinfuehrt
      */
 	public char[] getViewWestIn(){
 		return westIn.getLane();
@@ -221,12 +221,11 @@ public class CentralModel {
 	
 	/**
      * Gibt Lane die die Kreuzung in Richtung Norden verlaesst aus.
-     * Ausgabe in Form eines char[] Arrays.
      * Moegliche Werte der Felder: R = Rotes Auto, G = Gruenes Auto,
      * Y = Gelbes Auto, B = Blaues Auto, o = Kein Auto auf Feld.
      * Relevant für Visualisierung.
      * 
-     * @return Lane die die Kreuzung in Richtung Norden verlaesst als char[] Array
+     * @return Lane die die Kreuzung in Richtung Norden verlaesst
      */
 	public char[] getViewNorthOut(){
 		return northOut.getLane();
@@ -234,12 +233,11 @@ public class CentralModel {
 	
 	/**
      * Gibt Lane die die Kreuzung in Richtung Sueden verlaesst aus.
-     * Ausgabe in Form eines char[] Arrays.
      * Moegliche Werte der Felder: R = Rotes Auto, G = Gruenes Auto,
      * Y = Gelbes Auto, B = Blaues Auto, o = Kein Auto auf Feld.
      * Relevant für Visualisierung.
      * 
-     * @return Lane die die Kreuzung in Richtung Sueden verlaesst als char[] Array
+     * @return Lane die die Kreuzung in Richtung Sueden verlaesst
      */
 	public char[] getViewSouthOut(){
 		return southOut.getLane();
@@ -247,12 +245,11 @@ public class CentralModel {
 	
 	/**
      * Gibt Lane die die Kreuzung in Richtung Osten verlaesst aus.
-     * Ausgabe in Form eines char[] Arrays.
      * Moegliche Werte der Felder: R = Rotes Auto, G = Gruenes Auto,
      * Y = Gelbes Auto, B = Blaues Auto, o = Kein Auto auf Feld.
      * Relevant für Visualisierung.
      * 
-     * @return Lane die die Kreuzung in Richtung Osten verlaesst als char[] Array
+     * @return Lane die die Kreuzung in Richtung Osten verlaesst
      */
 	public char[] getViewEastOut(){
 		return eastOut.getLane();
@@ -260,12 +257,11 @@ public class CentralModel {
 	
 	/**
      * Gibt Lane die die Kreuzung in Richtung Westen verlaesst aus.
-     * Ausgabe in Form eines char[] Arrays.
      * Moegliche Werte der Felder: R = Rotes Auto, G = Gruenes Auto,
      * Y = Gelbes Auto, B = Blaues Auto, o = Kein Auto auf Feld.
      * Relevant für Visualisierung.
      * 
-     * @return Lane die die Kreuzung in Richtung Westen verlaesst als char[] Array
+     * @return Lane die die Kreuzung in Richtung Westen verlaesst
      */
 	public char[] getViewWestOut(){
 		return westOut.getLane();
@@ -273,9 +269,8 @@ public class CentralModel {
 	
 	/**
      * Gibt aktuelle Farbe der Noerdlichen Ampel aus.
-     * Ausgabe in Form eines Werts des Enums TrafficLigthColor.
      * 
-     * @return Farbe der Noerdlichen Ampel als Wert des Enums TrafficLigthColor
+     * @return Farbe der Noerdlichen Ampel
      */
 	public TrafficLigthColor getViewNorthTrafficLigthColor(){
 		return Junction.getNorthTrafficLigthColor();
@@ -283,9 +278,8 @@ public class CentralModel {
 	
 	/**
      * Gibt aktuelle Farbe der Suedlichen Ampel aus.
-     * Ausgabe in Form eines Werts des Enums TrafficLigthColor.
      * 
-     * @return Farbe der Suedlichen Ampel als Wert des Enums TrafficLigthColor
+     * @return Farbe der Suedlichen Ampel
      */
 	public TrafficLigthColor getViewSouthTrafficLigthColor(){
 		return Junction.getSouthTrafficLigthColor();
@@ -293,9 +287,8 @@ public class CentralModel {
 	
 	/**
      * Gibt aktuelle Farbe der Oestlichen Ampel aus.
-     * Ausgabe in Form eines Werts des Enums TrafficLigthColor.
      * 
-     * @return Farbe der Oestlichen Ampel als Wert des Enums TrafficLigthColor
+     * @return Farbe der Oestlichen Ampel
      */
 	public TrafficLigthColor getViewEastTrafficLigthColor(){
 		return Junction.getEastTrafficLigthColor();
@@ -303,9 +296,8 @@ public class CentralModel {
 	
 	/**
      * Gibt aktuelle Farbe der Westlichen Ampel aus.
-     * Ausgabe in Form eines Werts des Enums TrafficLigthColor.
      * 
-     * @return Farbe der Westlichen Ampel als Wert des Enums TrafficLigthColor
+     * @return Farbe der Westlichen Ampel
      */
 	public TrafficLigthColor getViewWestTrafficLigthColor(){
 		return Junction.getWestTrafficLigthColor();

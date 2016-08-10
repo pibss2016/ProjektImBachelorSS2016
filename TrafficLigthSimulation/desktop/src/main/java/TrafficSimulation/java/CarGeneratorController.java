@@ -2,14 +2,30 @@ package TrafficSimulation.java;
 
 import java.util.concurrent.ConcurrentLinkedQueue;
 
+/**
+ * Klasse fuer Autogenerierung.
+ * Erzeugt Autos mit zufaelliger Farbe, zufaelliger Herkunft
+ * und zufaelligem Reiseziel und zufaelliger Geschwindigkeit.
+ * @author Nikita Maslov
+ * @version 1.0
+ */
 public class CarGeneratorController {
 	
-	private CentralModel model;
-	private ConcurrentLinkedQueue<CarController> carQueueNorth;
-	private ConcurrentLinkedQueue<CarController> carQueueSouth;
-	private ConcurrentLinkedQueue<CarController> carQueueWest;
-	private ConcurrentLinkedQueue<CarController> carQueueEast;
+	private CentralModel model; // Referenz auf zentralles Datenmodell mit dem das erzeugte Auto interagieren soll
+	private ConcurrentLinkedQueue<CarController> carQueueNorth; //Referenz auf Schlange fuer Einfahrt auf noerdliche Lane
+	private ConcurrentLinkedQueue<CarController> carQueueSouth;//Referenz auf Schlange fuer Einfahrt auf suedliche Lane
+	private ConcurrentLinkedQueue<CarController> carQueueWest;//Referenz auf Schlange fuer Einfahrt auf westliche Lane
+	private ConcurrentLinkedQueue<CarController> carQueueEast;//Referenz auf Schlange fuer Einfahrt auf oestliche Lane
 	
+	
+	/**
+	 * Konstruktor für Klasse CarGeneratorController.
+	 * @param model Referenz auf zentralles Datenmodell mit dem das erzeugte Auto interagieren soll
+	 * @param carQueueNorth Schlange fuer Einfahrt auf noerdliche Lane
+	 * @param carQueueSouth Schlange fuer Einfahrt auf suedliche Lane
+	 * @param carQueueWest Schlange fuer Einfahrt auf westliche Lane
+	 * @param carQueueEast Schlange fuer Einfahrt auf oestliche Lane
+	 */
 	public CarGeneratorController (CentralModel model,ConcurrentLinkedQueue<CarController> carQueueNorth,ConcurrentLinkedQueue<CarController> carQueueSouth,
 			ConcurrentLinkedQueue<CarController> carQueueWest,ConcurrentLinkedQueue<CarController> carQueueEast){
 	
@@ -20,6 +36,7 @@ public class CarGeneratorController {
 		this.model = model;
 	}
 	
+	//Erzeugt zufaellige Farbe
 	private CarColor generateRandomCarColor(){
 		long i = (Math.round(Math.random()*100));
 		if(i<25){	
@@ -34,9 +51,10 @@ public class CarGeneratorController {
 		if(i<=100){
 			return CarColor.YELLOW;
 		}
-		return CarColor.BLUE;
+		return CarColor.BLUE;//wird nie erreicht, eingefuegt damit die Syntaxanalyse nicht rumheult
 	}
 	
+	//Erzeugt zufaellige Herkunft
 	private CarOriginDestination generateRandomOrigin(){
 		
 		long i = (Math.round(Math.random()*100));
@@ -53,9 +71,10 @@ public class CarGeneratorController {
 		if(i<=100){
 			return CarOriginDestination.WEST;
 		}
-		return CarOriginDestination.NORTH;
+		return CarOriginDestination.NORTH;//wird nie erreicht, eingefuegt damit die Syntaxanalyse nicht rumheult
 	}
 	
+	//Erzeugt zufaelliges Ziel, beruecksichtigt Herkunft
 	private CarOriginDestination generateRandomDestination(CarOriginDestination  carOrigin){
 		
 		long i = (Math.round(Math.random()*100));
@@ -121,9 +140,10 @@ public class CarGeneratorController {
 				}
 			    break; 
 		}	
-        return CarOriginDestination.NORTH;
+        return CarOriginDestination.NORTH;//wird nie erreicht, eingefuegt damit die Syntaxanalyse nicht rumheult
 	}
 	
+	//Erzeugt zufaellige Geschwindigkeit
 	private int generateRandomSpeed(){
 		
 		long i = (Math.round(Math.random()*100));
@@ -139,11 +159,17 @@ public class CarGeneratorController {
 
 			return 3;
 		}
-		return 1;
+		return 1;//wird nie erreicht, eingefuegt damit die Syntaxanalyse nicht rumheult
 	}
 		
+	/**
+	 * Methode um Autos zu generieren.
+	 * Erzeugt Autos mit zufaelligen Attributen und weist sie
+	 * der richtigen Warteschlange fuer Lanebeitritt zu.
+	 */
 	public void generateCar(){
 		
+			// Erzeugt Auto mit zufaeliigen Attributen
 			CarColor  carColor= generateRandomCarColor();
 			CarOriginDestination carOrigin=generateRandomOrigin();
 			CarOriginDestination carDestination=generateRandomDestination(carOrigin);
@@ -151,7 +177,8 @@ public class CarGeneratorController {
 			CarController newCarController = new CarController(carSpeed,model,carColor,carOrigin,carDestination); 
 			
 			switch(carOrigin){
-				
+			
+			// Weist Auto abhaengig von der Herkunft der richtigen Warteschlange fuer Lanebeitritt zu.
 			case NORTH:
 				carQueueNorth.add(newCarController );
 				break;

@@ -2,19 +2,35 @@ package TrafficSimulation.java;
 
 public class CarController implements Runnable{
 
-    private int speed;
-    private CentralModel model;
-    private LaneModel lane;
-    private int posLength;
-    private CarJunctionState carJunctionState;
-    private CarOriginDestination carOrigin;
-    private CarOriginDestination carDestination;
-    private LaneState laneState;
-    private CarState carState;
-    private int laneLength;
-    private char symbol;
+	/**
+	 * Zentrale ControllerKlasse für das Auto.
+	 * Steuert die Bewegung des Autos innerhalb der 
+	 * in der Klasse CentralModel spezifizierten Datenstruktur.
+	 *
+	 * @author Nikita Maslov
+	 * @version 1.0
+	 */
+    private int speed;//Tempo des Autos
+    private CentralModel model;//Referenz auf Zentrales Modell
+    private LaneModel lane; // Refrenz auf Lane auf der sich das Auto bewegt
+    private int posLength; // Postion des Autos auf der lane
+    private CarJunctionState carJunctionState;//Zustand des Autos wenn es auf der Kreuzung ist
+    private CarOriginDestination carOrigin;// Herkunft des Autos
+    private CarOriginDestination carDestination; // Ziel des Autos
+    private LaneState carLaneState; // Zustand des Autos wenn es auf der Lane ist
+    private CarState carState; // Uebergeordenter Zustand des Autos
+    private int laneLength; // Laenge der Lane auf der sich dad Auto befindet
+    private char symbol; // symbol das Auto in die charArray represenation der Lane hineinschreibt
     
-	public CarController(int speed, CentralModel model,CarColor color, CarOriginDestination carOrigin, CarOriginDestination carDestination) {
+    /**
+     * Konstruktor für Klasse CarController.
+     * @param model Referenz auf Zentrales Modell mit dem das Auto interagiert
+     * @param speed Tempo des Autos
+     * @param color Farbe des Autos
+     * @param carOrigin Herkunft des Autos
+     * @param carDestination Ziel des Autos
+	 */
+    public CarController(int speed, CentralModel model,CarColor color, CarOriginDestination carOrigin, CarOriginDestination carDestination) {
 		this.model = model;
 		this.speed = speed; 
 		this.carState = CarState.INQUEUE;
@@ -61,7 +77,11 @@ public class CarController implements Runnable{
 		}
 	}
 	
-	public CarState getCarState(){
+    /**
+     * Get Methode fuer uebergeordneten Zustand des Autos.
+     * @return uebergeordneter Zustand des Autos.
+	 */
+    public CarState getCarState(){
 		return carState;
 	}
 	
@@ -76,59 +96,59 @@ public class CarController implements Runnable{
 				if(model.getSouthIn().getLane()[laneLength-2]=='o'&&model.getSouthIn().getLane()[laneLength-1]=='o'&&model.getSouthIn().getLane()[laneLength]=='o'
 				&&  model.getJunction().getJunctionField()[1][1]=='o' &&  model.getJunction().getJunctionField()[0][1]=='o'){
 					turnLeftStatus= true;
-					model.getJunction().setBotSignal(LeftSignal.NONE);
+					model.getJunction().setNorthSignal(LeftSignal.NONE);
 					break;
 				}
 					
-				if(model.getJunction().getBotSignal()==LeftSignal.NONE&&model.getJunction().getTopSignal()==LeftSignal.NONE){
-					model.getJunction().setBotSignal(LeftSignal.LEFT);
+				if(model.getJunction().getNorthSignal()==LeftSignal.NONE&&model.getJunction().getSouthSignal()==LeftSignal.NONE){
+					model.getJunction().setNorthSignal(LeftSignal.LEFT);
 					break;	
 				}
 					
-				if(model.getJunction().getBotSignal()==LeftSignal.NONE && model.getJunction().getTopSignal()==LeftSignal.LEFT ){
-					model.getJunction().setBotSignal(LeftSignal.WAIT);
+				if(model.getJunction().getNorthSignal()==LeftSignal.NONE && model.getJunction().getSouthSignal()==LeftSignal.LEFT ){
+					model.getJunction().setNorthSignal(LeftSignal.WAIT);
 					break;
 				}
 					
-				if(model.getJunction().getBotSignal()==LeftSignal.LEFT&& model.getJunction().getTopSignal()==LeftSignal.WAIT){
+				if(model.getJunction().getNorthSignal()==LeftSignal.LEFT&& model.getJunction().getSouthSignal()==LeftSignal.WAIT){
 					turnLeftStatus= true;
-					model.getJunction().setBotSignal(LeftSignal.NONE);
+					model.getJunction().setNorthSignal(LeftSignal.NONE);
 					break;	
 				}
 					
-				if(model.getJunction().getBotSignal()==LeftSignal.NONE&& model.getJunction().getTopSignal()==LeftSignal.WAIT){
-					model.getJunction().setBotSignal(LeftSignal.WAIT);
+				if(model.getJunction().getNorthSignal()==LeftSignal.NONE&& model.getJunction().getSouthSignal()==LeftSignal.WAIT){
+					model.getJunction().setNorthSignal(LeftSignal.WAIT);
 					break;	
 				}
 				break;
-					
+
 			case SOUTH:
 					
 				if(model.getNorthIn().getLane()[laneLength-2]=='o'&&model.getNorthIn().getLane()[laneLength-1]=='o'&&model.getNorthIn().getLane()[laneLength]=='o'
 				&&  model.getJunction().getJunctionField()[0][0]=='o' &&  model.getJunction().getJunctionField()[1][0]=='o'){
 					turnLeftStatus= true;
-					model.getJunction().setTopSignal(LeftSignal.NONE);
+					model.getJunction().setSouthSignal(LeftSignal.NONE);
 					break;
 				}
 					
-				if(model.getJunction().getBotSignal()==LeftSignal.NONE&&model.getJunction().getTopSignal()==LeftSignal.NONE){
-					model.getJunction().setTopSignal(LeftSignal.LEFT);
+				if(model.getJunction().getNorthSignal()==LeftSignal.NONE&&model.getJunction().getSouthSignal()==LeftSignal.NONE){
+					model.getJunction().setSouthSignal(LeftSignal.LEFT);
 					break;	
 				}
 					
-				if(model.getJunction().getBotSignal()==LeftSignal.LEFT && model.getJunction().getTopSignal()==LeftSignal.NONE ){
-					model.getJunction().setTopSignal(LeftSignal.WAIT);
+				if(model.getJunction().getNorthSignal()==LeftSignal.LEFT && model.getJunction().getSouthSignal()==LeftSignal.NONE ){
+					model.getJunction().setSouthSignal(LeftSignal.WAIT);
 					break;
 				}
 					
-				if(model.getJunction().getBotSignal()==LeftSignal.WAIT&& model.getJunction().getTopSignal()==LeftSignal.LEFT){
+				if(model.getJunction().getNorthSignal()==LeftSignal.WAIT&& model.getJunction().getSouthSignal()==LeftSignal.LEFT){
 					turnLeftStatus= true;
-					model.getJunction().setTopSignal(LeftSignal.NONE);
+					model.getJunction().setSouthSignal(LeftSignal.NONE);
 					break;	
 				}
 					
-				if(model.getJunction().getBotSignal()==LeftSignal.WAIT&& model.getJunction().getTopSignal()==LeftSignal.NONE){
-					model.getJunction().setTopSignal(LeftSignal.WAIT);
+				if(model.getJunction().getNorthSignal()==LeftSignal.WAIT&& model.getJunction().getSouthSignal()==LeftSignal.NONE){
+					model.getJunction().setSouthSignal(LeftSignal.WAIT);
 					break;	
 				}
 				break;
@@ -138,28 +158,28 @@ public class CarController implements Runnable{
 				if(model.getEastIn().getLane()[laneLength-2]=='o'&&model.getEastIn().getLane()[laneLength-1]=='o'&&model.getEastIn().getLane()[laneLength]=='o'
 				&&  model.getJunction().getJunctionField()[0][0]=='o' &&  model.getJunction().getJunctionField()[0][1]=='o'){
 					turnLeftStatus= true;
-					model.getJunction().setBotSignal(LeftSignal.NONE);
+					model.getJunction().setWestSignal(LeftSignal.NONE);
 					break;
 				}
 					
-				if(model.getJunction().getBotSignal()==LeftSignal.NONE&&model.getJunction().getTopSignal()==LeftSignal.NONE){
-					model.getJunction().setBotSignal(LeftSignal.LEFT);
+				if(model.getJunction().getWestSignal()==LeftSignal.NONE&&model.getJunction().getEastSignal()==LeftSignal.NONE){
+					model.getJunction().setWestSignal(LeftSignal.LEFT);
 					break;	
 				}
 					
-				if(model.getJunction().getBotSignal()==LeftSignal.NONE && model.getJunction().getTopSignal()==LeftSignal.LEFT ){
-					model.getJunction().setBotSignal(LeftSignal.WAIT);
+				if(model.getJunction().getWestSignal()==LeftSignal.NONE && model.getJunction().getEastSignal()==LeftSignal.LEFT ){
+					model.getJunction().setWestSignal(LeftSignal.WAIT);
 					break;
 				}
 					
-				if(model.getJunction().getBotSignal()==LeftSignal.LEFT&& model.getJunction().getTopSignal()==LeftSignal.WAIT){
+				if(model.getJunction().getWestSignal()==LeftSignal.LEFT&& model.getJunction().getEastSignal()==LeftSignal.WAIT){
 					turnLeftStatus= true;
-					model.getJunction().setBotSignal(LeftSignal.NONE);
+					model.getJunction().setWestSignal(LeftSignal.NONE);
 					break;	
 				}
 					
-				if(model.getJunction().getBotSignal()==LeftSignal.NONE&& model.getJunction().getTopSignal()==LeftSignal.WAIT){
-					model.getJunction().setBotSignal(LeftSignal.WAIT);
+				if(model.getJunction().getWestSignal()==LeftSignal.NONE&& model.getJunction().getEastSignal()==LeftSignal.WAIT){
+					model.getJunction().setWestSignal(LeftSignal.WAIT);
 					break;	
 				}
 				break;
@@ -169,62 +189,66 @@ public class CarController implements Runnable{
 				if(model.getWestIn().getLane()[laneLength-2]=='o'&&model.getWestIn().getLane()[laneLength-1]=='o'&&model.getWestIn().getLane()[laneLength]=='o'
 				&&  model.getJunction().getJunctionField()[0][0]=='o' &&  model.getJunction().getJunctionField()[1][0]=='o'){
 					turnLeftStatus= true;
-					model.getJunction().setTopSignal(LeftSignal.NONE);
+					model.getJunction().setEastSignal(LeftSignal.NONE);
 					break;
 				}
 					
-				if(model.getJunction().getBotSignal()==LeftSignal.NONE&&model.getJunction().getTopSignal()==LeftSignal.NONE){
-					model.getJunction().setTopSignal(LeftSignal.LEFT);
+				if(model.getJunction().getWestSignal()==LeftSignal.NONE&&model.getJunction().getEastSignal()==LeftSignal.NONE){
+					model.getJunction().setEastSignal(LeftSignal.LEFT);
 					break;	
 				}
 					
-				if(model.getJunction().getBotSignal()==LeftSignal.LEFT && model.getJunction().getTopSignal()==LeftSignal.NONE ){
-					model.getJunction().setTopSignal(LeftSignal.WAIT);
+				if(model.getJunction().getWestSignal()==LeftSignal.LEFT && model.getJunction().getEastSignal()==LeftSignal.NONE ){
+					model.getJunction().setEastSignal(LeftSignal.WAIT);
 					break;
 				}
 					
-				if(model.getJunction().getBotSignal()==LeftSignal.WAIT&& model.getJunction().getTopSignal()==LeftSignal.LEFT){
+				if(model.getJunction().getWestSignal()==LeftSignal.WAIT&& model.getJunction().getEastSignal()==LeftSignal.LEFT){
 					turnLeftStatus= true;
-					model.getJunction().setTopSignal(LeftSignal.NONE);
+					model.getJunction().setEastSignal(LeftSignal.NONE);
 					break;	
 				}
 					
-				if(model.getJunction().getBotSignal()==LeftSignal.WAIT&& model.getJunction().getTopSignal()==LeftSignal.NONE){
-					model.getJunction().setTopSignal(LeftSignal.WAIT);
+				if(model.getJunction().getWestSignal()==LeftSignal.WAIT&& model.getJunction().getEastSignal()==LeftSignal.NONE){
+					model.getJunction().setEastSignal(LeftSignal.WAIT);
 					break;	
 				}
 				break;
+				
 		}
 		return  turnLeftStatus;	
 		
 	}
 	
+	/* Prueft, solange das Auto in der Warteschlange fuer Lanebeitritt ist, ob das Auto die Lane betreten 
+	kann und schreibt ggf den Zustand von Lane un Auto um*/
 	private void checkStartState(){
 		
 		synchronized(lane.getLane()){
 			
 			if (lane.getLane()[0]=='o'){
 				carState = CarState.ATLANE;
-				laneState = LaneState.NOMOVE;
+				carLaneState = LaneState.NOMOVE;
 				posLength = 0;
 				lane.getLane()[0]=symbol;	
 			}
 		}		
 	}
 
+	/*Prueft vor einer Bewegung des Autos auf der Lane ob und wie weit sich das Auto bewegen kann*/
 	private void checkLaneSpace(){
 		
 		synchronized(lane.getLane()){
 			int state;
 			
 			if (posLength == laneLength && lane.getJunctionPostion()== JunctionPosition.START&&carState!=CarState.ATJUNCTION){	
-				laneState = LaneState.DONE;
+				carLaneState = LaneState.DONE;
                 carState = CarState.DONE;
 				return;
 			}
 			
 			if (posLength == laneLength && lane.getJunctionPostion()== JunctionPosition.END){	
-				laneState = LaneState.ATJUNCTION;
+				carLaneState = LaneState.ATJUNCTION;
                 carState = CarState.ATJUNCTION;
                 carJunctionState = CarJunctionState.ENTERJUNCTION;
 				return;
@@ -246,27 +270,28 @@ public class CarController implements Runnable{
 				}			
 			}
 			else{
-				laneState = LaneState.NOMOVE;
+				carLaneState = LaneState.NOMOVE;
 				return;
 			}
 			
 			switch(state){
 			
 				case 3:
-					laneState = LaneState.MOVETHREE;
+					carLaneState = LaneState.MOVETHREE;
 					return;
 			
 				case 2:
-					laneState = LaneState.MOVETWO;
+					carLaneState = LaneState.MOVETWO;
 					return;
 			
 				default:
-					laneState = LaneState.MOVEONE;
+					carLaneState = LaneState.MOVEONE;
 					return;
 			}
 		}
 	}
-
+    
+	/*Regelt das Verhalten des Autos beim Einfahren auf die Kreuzung*/
 	private void handleEnterJunction(){
 		
 		synchronized(model){
@@ -373,6 +398,8 @@ public class CarController implements Runnable{
 		}
 	}
 	
+	/*Regelt abhaengig von Herkunft und Ziel des Autos ob das Auto
+	 *die Kreuzung nach rechts verlaesst oder geradeaus faehrt*/
 	private void handleLeaveRigth(){
 		
 		synchronized(model){
@@ -531,6 +558,8 @@ public class CarController implements Runnable{
 		}	
 	}
 	
+	/*Regelt abhaengig von Herkunft und Ziel des Autos ob das Auto
+	 *die Kreuzung nach vorne verlaesst oder links abbiegt*/
 	private void handleLeaveForward(){
 		
 		synchronized(model){
@@ -646,7 +675,8 @@ public class CarController implements Runnable{
 			}
 		}	
 	}
-		
+	
+	/*Regelt nach dem Abbiegen nach Links das Verlassen der Kreuzung*/
 	private void handleLeaveLeft(){
 		
 		synchronized(model){
@@ -659,8 +689,8 @@ public class CarController implements Runnable{
 						model.getNorthOut().getLane()[0] = symbol;
 						lane = model.getNorthOut();
 						posLength = 0;
-						if(model.getJunction().getTopSignal()==LeftSignal.WAIT&& carOrigin == CarOriginDestination.WEST){
-							model.getJunction().setTopSignal(LeftSignal.LEFT);
+						if(model.getJunction().getEastSignal()==LeftSignal.WAIT){
+							model.getJunction().setEastSignal(LeftSignal.LEFT);
 						}
 						carState = CarState.ATLANE;
 					}	
@@ -672,8 +702,8 @@ public class CarController implements Runnable{
 						model.getSouthOut().getLane()[0] = symbol;
 						lane = model.getSouthOut();
 						posLength = 0;
-						if(model.getJunction().getBotSignal()==LeftSignal.WAIT&& carOrigin == CarOriginDestination.EAST){
-							model.getJunction().setBotSignal(LeftSignal.LEFT);
+						if(model.getJunction().getWestSignal()==LeftSignal.WAIT){
+							model.getJunction().setWestSignal(LeftSignal.LEFT);
 						}
 						carState = CarState.ATLANE;
 					}
@@ -685,8 +715,8 @@ public class CarController implements Runnable{
 						model.getEastOut().getLane()[0] = symbol;
 						lane = model.getEastOut();
 						posLength = 0;
-						if(model.getJunction().getTopSignal()==LeftSignal.WAIT&& carOrigin == CarOriginDestination.NORTH){
-							model.getJunction().setTopSignal(LeftSignal.LEFT);
+						if(model.getJunction().getSouthSignal()==LeftSignal.WAIT){
+							model.getJunction().setSouthSignal(LeftSignal.LEFT);
 						}
 						carState = CarState.ATLANE;
 					}
@@ -698,8 +728,8 @@ public class CarController implements Runnable{
 						model.getWestOut().getLane()[0] = symbol;
 						lane = model.getWestOut();
 						posLength = 0;
-						if(model.getJunction().getBotSignal()==LeftSignal.WAIT&& carOrigin == CarOriginDestination.SOUTH){
-							model.getJunction().setBotSignal(LeftSignal.LEFT);
+						if(model.getJunction().getNorthSignal()==LeftSignal.WAIT){
+							model.getJunction().setNorthSignal(LeftSignal.LEFT);
 						}
 						carState = CarState.ATLANE;
 				
@@ -709,6 +739,8 @@ public class CarController implements Runnable{
 		}
 	}
 	
+	/*Regelt das Verhalten an der Kreuzung indem abhaengig von 
+	 * carJunctionState die richtigen Verhaltensmethoden aufgerufen werden*/
 	private void passJunction(){
 		
 		switch(carJunctionState){
@@ -731,10 +763,12 @@ public class CarController implements Runnable{
 		}
 	}	
 	
+	/*Bewegt das Auto abhaengig des In der Methode checkLaneSpace angepassten Attributs carLaneState ueber die Lane,
+	 * oder loescht die Markierung des Autos auf der Lane wenn der Zustand DONE ist*/
 	private void move(){
 		synchronized(lane.getLane()){
 			
-			switch(laneState){
+			switch(carLaneState){
 			
 				case DONE:
 					
@@ -769,6 +803,10 @@ public class CarController implements Runnable{
 		}
 	}
 	
+	/**
+     * run() Methode regelt hier das gesamte Verhalten des Autos indem sie abhaengig vom uebergeordenetn Zustand des 
+     * Autos die Methoden aufruft die das Verhalten des Autos in dem jeweiligen Zustand steuern.
+	 */
 	public void run(){
 		
 		switch(carState){ 
@@ -780,18 +818,18 @@ public class CarController implements Runnable{
 				checkStartState();
 				break;
 		
-				case ATLANE:
-					checkLaneSpace();
-					move();
-					if (carState == CarState.ATJUNCTION){
-						handleEnterJunction();			
-					}
-					break;
+			case ATLANE:
+				checkLaneSpace();
+				move();
+				if (carState == CarState.ATJUNCTION){
+					handleEnterJunction();			
+				}
+				break;
 		
-				case ATJUNCTION:
+			case ATJUNCTION:
 			
-					passJunction();
-					break;
+				passJunction();
+				break;
 		}	
 	}
 }

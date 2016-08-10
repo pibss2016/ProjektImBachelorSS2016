@@ -13,7 +13,7 @@ public class MainController implements ApplicationListener {
 	private int waitingTime;
 	private int carSpawnRate;
     private CentralModel model;
-    private CentralModelController modelController;
+    private CentralSimulationController modelController;
    
     private SpriteBatch batch;
     private TextureAtlas atlas; 
@@ -660,7 +660,7 @@ public class MainController implements ApplicationListener {
     public void create() { 
     	
     	model = new CentralModel(laneLength); 
-    	modelController = new CentralModelController(model,carSpawnRate);
+    	modelController = new CentralSimulationController(model,carSpawnRate);
     	laneLength = model.getLaneLength(); 
     	
     	batch = new SpriteBatch();
@@ -740,7 +740,7 @@ public class MainController implements ApplicationListener {
     	Gdx.gl.glClearColor(1, 1, 1, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         
-        modelController.runModel();
+        modelController.runSimulation();
         
         batch.begin();
         
