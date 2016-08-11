@@ -10,7 +10,7 @@ public class DesktopLauncher {
 		LwjglApplicationConfiguration cfg = new LwjglApplicationConfiguration();
         cfg.title = "Trafficlight Simulation";
         
-        int laneLength = 10;//Laenge der Lanes, muss >= 5 sein
+        int laneLength = 15;//Laenge der Lanes, muss >= 5 sein
         int waitingTime = 500;//Verzoegerung des Animationsablauf in Millisekunden; je kleiner waitingTime, desto höhere Geschwindigkeit von Autos
         int carSpawnRate = 3;// Anzahl der Iterationen der Simulation die zwischen dem Genrieren von 2 Autos durchgefuert werden; je kleiner carSpawnRate, desto mehr Autos erscheinen, aber es darf nicht kleiner als 1 sein
         

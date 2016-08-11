@@ -241,7 +241,7 @@ public class CarController implements Runnable{
 		synchronized(lane.getLane()){
 			int state;
 			
-			if (posLength == laneLength && lane.getJunctionPostion()== JunctionPosition.START&&carState!=CarState.ATJUNCTION){	
+			if (posLength == laneLength && lane.getJunctionPostion()== JunctionPosition.START){	
 				carLaneState = LaneState.DONE;
                 carState = CarState.DONE;
 				return;
@@ -254,11 +254,32 @@ public class CarController implements Runnable{
 				return;
 			}
 			
+			if(posLength + speed > laneLength &&lane.getJunctionPostion()== JunctionPosition.START){
+				carLaneState = LaneState.DONE;
+                carState = CarState.DONE;
+				return;
+			}
+			
+			
+			
+			if(lane.getJunctionPostion()== JunctionPosition.END &&posLength + speed-1 > laneLength-3 && lane.getLane()[posLength+1]=='o'){		
+				carLaneState = LaneState.MOVEONE;
+				return;
+				
+			}
+			else{
+				if(lane.getJunctionPostion()== JunctionPosition.END &&posLength + speed > laneLength-3 && lane.getLane()[posLength+1]=='o'){
+					carLaneState = LaneState.MOVEONE;
+					return;
+				}
+			}
+			
+			
 			if(posLength + 1 <= laneLength && lane.getLane()[posLength+1]=='o'){
 				
-				if(posLength + 2 <= laneLength-3 && lane.getLane()[posLength+2]=='o'){
+				if(posLength + 2 <= laneLength && lane.getLane()[posLength+2]=='o'){
 					
-					if(posLength + 3 <= laneLength-3 && lane.getLane()[posLength+3]=='o'){
+					if(posLength + 3 <= laneLength && lane.getLane()[posLength+3]=='o'){
 						state = Math.min(3,speed);
 					}
 					else{
