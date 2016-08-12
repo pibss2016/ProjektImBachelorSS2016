@@ -2,19 +2,27 @@ package TrafficSimulation.java;
 
 import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input;
+import com.badlogic.gdx.InputAdapter;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 
-public class MainController implements ApplicationListener {
+public class MainController extends InputAdapter  implements ApplicationListener {
     
 	private int laneLength;
 	private int waitingTime;
+	private int initialWaitingTime;
 	private int carSpawnRate;
     private CentralModel model;
     private CentralSimulationController modelController;
-   
+    
+    private SimulationSpeed simulationSpeed;
+    private BitmapFont font;
+    
     private SpriteBatch batch;
     private TextureAtlas atlas; 
     
@@ -82,8 +90,10 @@ public class MainController implements ApplicationListener {
     
     public MainController(int laneLength,int waitingTime, int carSpawnRate){
     	this.laneLength = laneLength;
-    	this.waitingTime = waitingTime;
+    	this.initialWaitingTime = waitingTime;
+    	this.waitingTime = this.initialWaitingTime;
     	this.carSpawnRate = carSpawnRate;	
+    	this.simulationSpeed = SimulationSpeed.INITIAL;
     }
     
     private void drawNorthIn(char[]lane){
@@ -656,6 +666,105 @@ public class MainController implements ApplicationListener {
 
 	}
 	
+	private void drawFont(){
+		
+		switch(simulationSpeed){
+		
+		case INITIAL:
+			font.draw(batch, "Simulation Speed: Initial", 8, ((laneLength*2)+2)*32);
+			break;
+		
+		case SLOW:
+			font.draw(batch, "Simulation Speed: Slow", 8, ((laneLength*2)+2)*32);
+			break;
+		
+			
+		case NORMAL:
+			font.draw(batch, "Simulation Speed: Normal", 8, ((laneLength*2)+2)*32);
+			break;
+		
+			
+		case FAST:
+			font.draw(batch, "Simulation Speed: Fast", 8, ((laneLength*2)+2)*32);
+			break;
+		
+			
+		case VERYFAST:
+			font.draw(batch, "Simulation Speed: Very Fast", 8, ((laneLength*2)+2)*32);
+			break;
+		
+    	}
+	}
+	
+	@Override
+    public boolean keyDown(int keycode) {
+       
+		if (keycode == Input.Keys.STAR) {
+        	
+        	switch(simulationSpeed){
+        		
+        		case INITIAL:
+        			simulationSpeed = SimulationSpeed.SLOW;
+        			waitingTime = 500;
+        			break;
+        			
+        		default:
+        			simulationSpeed = SimulationSpeed.INITIAL;
+        			waitingTime = initialWaitingTime;
+        			break;
+        	}
+        }
+        
+        if (keycode == Input.Keys.PLUS) {
+        	
+        	switch(simulationSpeed){
+    				
+    		case SLOW:
+    			simulationSpeed = SimulationSpeed.NORMAL;
+    			waitingTime = 200;
+    			break;
+    			
+    		case NORMAL:
+    			simulationSpeed = SimulationSpeed.FAST;
+    			waitingTime = 100;
+    			break;
+    			
+    		case FAST:
+    			simulationSpeed = SimulationSpeed.VERYFAST;
+    			waitingTime = 0;
+    			break;
+    			
+    		default:
+    			break;
+        	}
+        }
+        	
+        if (keycode == Input.Keys.MINUS) {
+             	
+        	switch(simulationSpeed){
+         		     			
+         	case VERYFAST:
+         		simulationSpeed = SimulationSpeed.FAST;
+         		waitingTime = 100;
+         		break;
+         			
+         	case FAST:
+         		simulationSpeed = SimulationSpeed.NORMAL;
+         		waitingTime = 200;
+         		break;
+         			
+         	case NORMAL:
+         		simulationSpeed = SimulationSpeed.SLOW;
+         		waitingTime = 500;
+         		break;
+         			
+         	default:
+         		break;
+            }
+        }
+        return false;
+    }
+		
 	@Override
     public void create() { 
     	
@@ -724,6 +833,12 @@ public class MainController implements ApplicationListener {
         redCarSouthEast = atlas.findRegion("RedCarSouthEast");
         greenCarSouthEast = atlas.findRegion("GreenCarSouthEast");
         yellowCarSouthEast= atlas.findRegion("YellowCarSouthEast");
+        
+        font = new BitmapFont();
+        font.setColor(Color.BLACK);
+        Gdx.input.setInputProcessor(this);
+        
+        
     
         
     }
@@ -756,8 +871,10 @@ public class MainController implements ApplicationListener {
         
         drawTrafficLights();
         drawJunction();
+        drawFont();
         
         batch.end();
+        
         try {
 			Thread.sleep(waitingTime);
 		} catch (InterruptedException e) {

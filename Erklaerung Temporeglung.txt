@@ -1,0 +1,15 @@
+Habe eine Temporeglung fuer die Simulation hinzugfuegt.
+
+Ihr koennt, indem ihr * drueckt vom Intialen Tempo zum
+Tempo Slow wechseln. Jetzt koent ihr mit + und - das
+Tempo regulieren.
+
+Achtung: ihr koennt das Tempo nicht per
++ und - regulieren wenn ihr im Tempo Intial seid.
+Ihr muesst erst mit * aus dem initialen Tempo zum Tempo 
+Slow wechslen.
+
+Ihr konnt aus jedem anderen Tempo mit * wieder auf
+das Initiale Tempo wechseln.
+
+Das aktuelle Tempo steht oben links in der Visualisierung der Simulation.
