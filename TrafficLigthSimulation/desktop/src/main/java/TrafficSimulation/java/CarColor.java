@@ -10,4 +10,5 @@ public enum CarColor {
 	BLUE,
 	RED,
 	YELLOW,
+	GRAY,
 }
