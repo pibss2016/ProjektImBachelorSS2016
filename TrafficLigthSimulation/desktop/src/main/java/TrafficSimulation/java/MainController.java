@@ -36,41 +36,49 @@ public class MainController extends InputAdapter  implements ApplicationListener
     private TextureRegion redCarNorth;
     private TextureRegion greenCarNorth;
     private TextureRegion yellowCarNorth;
+    private TextureRegion grayCarNorth;
     
     private TextureRegion blueCarSouth;
     private TextureRegion redCarSouth;
     private TextureRegion greenCarSouth;
     private TextureRegion yellowCarSouth;
+    private TextureRegion grayCarSouth;
     
     private TextureRegion blueCarEast;
     private TextureRegion redCarEast;
     private TextureRegion greenCarEast;
     private TextureRegion yellowCarEast;
+    private TextureRegion grayCarEast;
     
     private TextureRegion blueCarWest;
     private TextureRegion redCarWest;
     private TextureRegion greenCarWest;
     private TextureRegion yellowCarWest;
+    private TextureRegion grayCarWest;
     
     private TextureRegion blueCarNorthWest;
     private TextureRegion redCarNorthWest;
     private TextureRegion greenCarNorthWest;
     private TextureRegion yellowCarNorthWest;
+    private TextureRegion grayCarNorthWest;
     
     private TextureRegion blueCarSouthWest;
     private TextureRegion redCarSouthWest;
     private TextureRegion greenCarSouthWest;
     private TextureRegion yellowCarSouthWest;
+    private TextureRegion grayCarSouthWest;
     
     private TextureRegion blueCarNorthEast;
     private TextureRegion redCarNorthEast;
     private TextureRegion greenCarNorthEast;
     private TextureRegion yellowCarNorthEast;
+    private TextureRegion grayCarNorthEast;
     
     private TextureRegion blueCarSouthEast;
     private TextureRegion redCarSouthEast;
     private TextureRegion greenCarSouthEast;
     private TextureRegion yellowCarSouthEast;
+    private TextureRegion grayCarSouthEast;
     
     private TextureRegion northTrafficGreen;
     private TextureRegion northTrafficYellow;
@@ -120,6 +128,11 @@ public class MainController extends InputAdapter  implements ApplicationListener
     			batch.draw(yellowCarSouth, laneLength*32, ((laneLength*2)+2)*32-i*32);
     		}
     		
+    		if (lane[i-1]=='X'){
+			 	
+    			batch.draw(grayCarSouth, laneLength*32, ((laneLength*2)+2)*32-i*32);
+    		}
+    		
     		if (lane[i-1]=='o'){
 			 	
     			batch.draw(street, laneLength*32, ((laneLength*2)+2)*32-i*32);
@@ -147,6 +160,10 @@ public class MainController extends InputAdapter  implements ApplicationListener
     			batch.draw(yellowCarNorth, (laneLength+1)*32, 32*i);
     		}
     		
+    		if (lane[i]=='X'){
+    			batch.draw(grayCarNorth, (laneLength+1)*32, 32*i);
+    		}
+    		
     		if (lane[i]=='o'){	 	
     			batch.draw(street, (laneLength+1)*32, 32*i);
     		}	
@@ -171,6 +188,10 @@ public class MainController extends InputAdapter  implements ApplicationListener
 	
     		if (lane[i]=='Y'){ 	
     			batch.draw(yellowCarEast, i*32, laneLength*32);
+    		}
+    		
+    		if (lane[i]=='X'){ 	
+    			batch.draw(grayCarEast, i*32, laneLength*32);
     		}
 	
     		if (lane[i]=='o'){ 	
@@ -198,6 +219,10 @@ public class MainController extends InputAdapter  implements ApplicationListener
     		if (lane[i-1]=='B'){ 	
     			batch.draw(blueCarWest,((laneLength*2)+2-i)*32, (laneLength+1)*32);
     		}
+    		
+    		if (lane[i-1]=='X'){ 	
+    			batch.draw(grayCarWest,((laneLength*2)+2-i)*32, (laneLength+1)*32);
+    		}
 
     		if (lane[i-1]=='o'){ 	
     			batch.draw(street,((laneLength*2)+2-i)*32, (laneLength+1)*32);
@@ -223,6 +248,10 @@ public class MainController extends InputAdapter  implements ApplicationListener
 
     		if (lane[i]=='R'){ 	
     			batch.draw(redCarNorth, (laneLength+1)*32,((laneLength+2)*32)+i*32);	
+    		}
+    		
+    		if (lane[i]=='X'){ 	
+    			batch.draw(grayCarNorth, (laneLength+1)*32,((laneLength+2)*32)+i*32);	
     		}
 
     		if (lane[i]=='o'){ 	
@@ -250,6 +279,10 @@ public class MainController extends InputAdapter  implements ApplicationListener
     		if (lane[i]=='R'){ 	
     			batch.draw(redCarSouth,(laneLength)*32,((laneLength-1)-i)*32);
     		}
+    		
+    		if (lane[i]=='X'){ 	
+    			batch.draw(grayCarSouth,(laneLength)*32,((laneLength-1)-i)*32);
+    		}
 
     		if (lane[i]=='o'){ 	
     			batch.draw(street,(laneLength)*32,((laneLength-1)-i)*32);
@@ -275,6 +308,10 @@ public class MainController extends InputAdapter  implements ApplicationListener
 
     		if (lane[i]=='R'){ 	
     			batch.draw(redCarWest,(((laneLength-1)-i)*32),(laneLength+1)*32);
+    		}
+    		
+    		if (lane[i]=='X'){ 	
+    			batch.draw(grayCarWest,(((laneLength-1)-i)*32),(laneLength+1)*32);
     		}
 	
     		if (lane[i]=='o'){ 	
@@ -302,6 +339,10 @@ public class MainController extends InputAdapter  implements ApplicationListener
 
     		if (lane[i]=='R'){ 	
     			batch.draw(redCarEast,(laneLength+2+i)*32,laneLength*32);
+    		}
+    		
+    		if (lane[i]=='X'){ 	
+    			batch.draw(grayCarEast,(laneLength+2+i)*32,laneLength*32);
     		}
  
     		if (lane[i]=='o'){ 	
@@ -368,6 +409,11 @@ public class MainController extends InputAdapter  implements ApplicationListener
 					break;
 				}
 				
+				if(Junction [h][v]=='X'){
+					batch.draw(grayCarWest,(laneLength+x)*32,(laneLength+y)*32);
+					break;
+				}
+				
 				if(Junction [h][v]=='o'){
 					batch.draw(street,(laneLength+x)*32,(laneLength+y)*32);
 					break;
@@ -393,6 +439,11 @@ public class MainController extends InputAdapter  implements ApplicationListener
 											
 				if(Junction [h][v]=='Y'){
 					batch.draw(yellowCarEast,(laneLength+x)*32,(laneLength+y)*32);
+					break;
+				}
+				
+				if(Junction [h][v]=='X'){
+					batch.draw(grayCarEast,(laneLength+x)*32,(laneLength+y)*32);
 					break;
 				}
 				
@@ -424,6 +475,11 @@ public class MainController extends InputAdapter  implements ApplicationListener
 					break;
 				}
 				
+				if(Junction [h][v]=='X'){
+					batch.draw(grayCarNorth,(laneLength+x)*32,(laneLength+y)*32);
+					break;
+				}
+				
 				if(Junction [h][v]=='o'){
 					batch.draw(street,(laneLength+x)*32,(laneLength+y)*32);
 					break;
@@ -449,6 +505,11 @@ public class MainController extends InputAdapter  implements ApplicationListener
 											
 				if(Junction [h][v]=='Y'){
 					batch.draw(yellowCarSouth,(laneLength+x)*32,(laneLength+y)*32);
+					break;
+				}
+				
+				if(Junction [h][v]=='X'){
+					batch.draw(grayCarSouth,(laneLength+x)*32,(laneLength+y)*32);
 					break;
 				}
 				
@@ -481,6 +542,11 @@ public class MainController extends InputAdapter  implements ApplicationListener
 					break;
 				}
 				
+				if(Junction [h][v]=='X'){
+					batch.draw(grayCarNorthEast,(laneLength+x)*32,(laneLength+y)*32);
+					break;
+				}
+				
 				if(Junction [h][v]=='o'){
 					batch.draw(street,(laneLength+x)*32,(laneLength+y)*32);
 					break;
@@ -506,6 +572,11 @@ public class MainController extends InputAdapter  implements ApplicationListener
 											
 				if(Junction [h][v]=='Y'){
 					batch.draw(yellowCarSouthEast,(laneLength+x)*32,(laneLength+y)*32);
+					break;
+				}
+				
+				if(Junction [h][v]=='X'){
+					batch.draw(grayCarSouthEast,(laneLength+x)*32,(laneLength+y)*32);
 					break;
 				}
 				
@@ -537,6 +608,11 @@ public class MainController extends InputAdapter  implements ApplicationListener
 					break;
 				}
 				
+				if(Junction [h][v]=='X'){
+					batch.draw(grayCarNorthWest,(laneLength+x)*32,(laneLength+y)*32);
+					break;
+				}
+				
 				if(Junction [h][v]=='o'){
 					batch.draw(street,(laneLength+x)*32,(laneLength+y)*32);
 					break;
@@ -562,6 +638,11 @@ public class MainController extends InputAdapter  implements ApplicationListener
 											
 				if(Junction [h][v]=='Y'){
 					batch.draw(yellowCarSouthWest,(laneLength+x)*32,(laneLength+y)*32);
+					break;
+				}
+				
+				if(Junction [h][v]=='X'){
+					batch.draw(grayCarSouthWest,(laneLength+x)*32,(laneLength+y)*32);
 					break;
 				}
 				
@@ -773,7 +854,7 @@ public class MainController extends InputAdapter  implements ApplicationListener
     	laneLength = model.getLaneLength(); 
     	
     	batch = new SpriteBatch();
-        atlas = new TextureAtlas("SimPics.atlas");
+        atlas = new TextureAtlas("NewSimPics.atlas");
        
         street = atlas.findRegion("street");
         
@@ -798,41 +879,49 @@ public class MainController extends InputAdapter  implements ApplicationListener
         redCarNorth = atlas.findRegion("RedCarNorth");
         greenCarNorth = atlas.findRegion("GreenCarNorth");
         yellowCarNorth = atlas.findRegion("YellowCarNorth");
+        grayCarNorth = atlas.findRegion("GrayCarNorth");
         
         blueCarSouth = atlas.findRegion("BlueCarSouth");
         redCarSouth = atlas.findRegion("RedCarSouth");
         greenCarSouth = atlas.findRegion("GreenCarSouth");
         yellowCarSouth = atlas.findRegion("YellowCarSouth");
+        grayCarSouth = atlas.findRegion("GrayCarSouth");
         
         blueCarWest = atlas.findRegion("BlueCarWest");
         redCarWest = atlas.findRegion("RedCarWest");
         greenCarWest = atlas.findRegion("GreenCarWest");
         yellowCarWest = atlas.findRegion("YellowCarWest");
+        grayCarWest = atlas.findRegion("GrayCarWest");
         
         blueCarEast = atlas.findRegion("BlueCarEast");
         redCarEast = atlas.findRegion("RedCarEast");
         greenCarEast = atlas.findRegion("GreenCarEast");
         yellowCarEast= atlas.findRegion("YellowCarEast");
+        grayCarEast= atlas.findRegion("GrayCarEast");
         
         blueCarNorthWest = atlas.findRegion("BlueCarNorthWest");
         redCarNorthWest = atlas.findRegion("RedCarNorthWest");
         greenCarNorthWest = atlas.findRegion("GreenCarNorthWest");
         yellowCarNorthWest = atlas.findRegion("YellowCarNorthWest");
+        grayCarNorthWest = atlas.findRegion("GrayCarNorthWest");
         
         blueCarSouthWest = atlas.findRegion("BlueCarSouthWest");
         redCarSouthWest = atlas.findRegion("RedCarSouthWest");
         greenCarSouthWest= atlas.findRegion("GreenCarSouthWest");
         yellowCarSouthWest = atlas.findRegion("YellowCarSouthWest");
+        grayCarSouthWest = atlas.findRegion("GrayCarSouthWest");
         
         blueCarNorthEast = atlas.findRegion("BlueCarNorthEast");
         redCarNorthEast = atlas.findRegion("RedCarNorthEast");
         greenCarNorthEast = atlas.findRegion("GreenCarNorthEast");
         yellowCarNorthEast = atlas.findRegion("YellowCarNorthEast");
+        grayCarNorthEast = atlas.findRegion("GrayCarNorthEast");
         
         blueCarSouthEast = atlas.findRegion("BlueCarSouthEast");
         redCarSouthEast = atlas.findRegion("RedCarSouthEast");
         greenCarSouthEast = atlas.findRegion("GreenCarSouthEast");
         yellowCarSouthEast= atlas.findRegion("YellowCarSouthEast");
+        grayCarSouthEast= atlas.findRegion("GrayCarSouthEast");
         
         font = new BitmapFont();
         font.setColor(Color.BLACK);
