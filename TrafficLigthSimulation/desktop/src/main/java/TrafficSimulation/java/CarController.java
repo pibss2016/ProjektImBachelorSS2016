@@ -3,7 +3,7 @@ package TrafficSimulation.java;
 public class CarController implements Runnable{
 
 	/**
-	 * Zentrale ControllerKlasse für das Auto.
+	 * Zentrale ControllerKlasse fÃ¼r das Auto.
 	 * Steuert die Bewegung des Autos innerhalb der 
 	 * in der Klasse CentralModel spezifizierten Datenstruktur.
 	 *
@@ -23,7 +23,7 @@ public class CarController implements Runnable{
     private char symbol; // symbol das Auto in die charArray represenation der Lane hineinschreibt
     
     /**
-     * Konstruktor für Klasse CarController.
+     * Konstruktor fÃ¼r Klasse CarController.
      * @param model Referenz auf Zentrales Modell mit dem das Auto interagiert
      * @param speed Tempo des Autos
      * @param color Farbe des Autos
@@ -73,6 +73,10 @@ public class CarController implements Runnable{
 	
 			case GREEN:
 				this.symbol = 'G';
+				break;
+				
+			case GRAY:
+				this.symbol = 'X';
 				break;
 		}
 	}
