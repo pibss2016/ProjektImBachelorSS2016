@@ -19,7 +19,7 @@ public class CarGeneratorController {
 	
 	
 	/**
-	 * Konstruktor für Klasse CarGeneratorController.
+	 * Konstruktor fÃ¼r Klasse CarGeneratorController.
 	 * @param model Referenz auf zentralles Datenmodell mit dem das erzeugte Auto interagieren soll
 	 * @param carQueueNorth Schlange fuer Einfahrt auf noerdliche Lane
 	 * @param carQueueSouth Schlange fuer Einfahrt auf suedliche Lane
@@ -38,18 +38,23 @@ public class CarGeneratorController {
 	
 	//Erzeugt zufaellige Farbe
 	private CarColor generateRandomCarColor(){
+		
 		long i = (Math.round(Math.random()*100));
-		if(i<25){	
+		
+		if(i<20){	
 			return CarColor.BLUE;
 		}
-		if(i<50){
+		if(i<40){
 			return CarColor.GREEN;
 		}
-		if(i<75){
+		if(i<60){
 			return CarColor.RED;
 		}
-		if(i<=100){
+		if(i<80){
 			return CarColor.YELLOW;
+		}
+		if(i<=100){
+			return CarColor.GRAY;
 		}
 		return CarColor.BLUE;//wird nie erreicht, eingefuegt damit die Syntaxanalyse nicht rumheult
 	}
