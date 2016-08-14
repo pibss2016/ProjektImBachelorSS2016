@@ -10,6 +10,7 @@ import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.badlogic.gdx.audio.Sound;
 
 public class MainController extends InputAdapter  implements ApplicationListener {
     
@@ -22,6 +23,8 @@ public class MainController extends InputAdapter  implements ApplicationListener
     
     private SimulationSpeed simulationSpeed;
     private BitmapFont font;
+    
+    private Sound sound;
     
     private SpriteBatch batch;
     private TextureAtlas atlas; 
@@ -927,7 +930,8 @@ public class MainController extends InputAdapter  implements ApplicationListener
         font.setColor(Color.BLACK);
         Gdx.input.setInputProcessor(this);
         
-        
+        sound = Gdx.audio.newSound(Gdx.files.internal("trafficsound.mp3"));
+	sound.play();
     
         
     }
@@ -936,6 +940,7 @@ public class MainController extends InputAdapter  implements ApplicationListener
     public void dispose() {
         batch.dispose();
         atlas.dispose();
+        sound.dispose();
     }
 
     @Override
