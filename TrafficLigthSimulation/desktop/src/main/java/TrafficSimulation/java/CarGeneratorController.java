@@ -16,10 +16,10 @@ public class CarGeneratorController {
 	private ConcurrentLinkedQueue<CarController> carQueueSouth;//Referenz auf Schlange fuer Einfahrt auf suedliche Lane
 	private ConcurrentLinkedQueue<CarController> carQueueWest;//Referenz auf Schlange fuer Einfahrt auf westliche Lane
 	private ConcurrentLinkedQueue<CarController> carQueueEast;//Referenz auf Schlange fuer Einfahrt auf oestliche Lane
-	
-	public static final int FIRST_THIRD=34;
-	public static final int SEC_THIRD= 67;
-	public static final int THIRD_THIRD = 100;
+		
+	public static final int FIRST_THIRD=34; //1. Drittel von 100 (:= Wertebereich, aus dem Zufallswerte generiert werden)
+	public static final int SEC_THIRD= 67; //2. Drittel
+	public static final int THIRD_THIRD = 100; //3. Drittel
 	/**
 	 * Konstruktor für Klasse CarGeneratorController.
 	 * @param model Referenz auf zentralles Datenmodell mit dem das erzeugte Auto interagieren soll
@@ -82,7 +82,6 @@ public class CarGeneratorController {
 	}
 	
 	//Erzeugt zufaelliges Ziel, beruecksichtigt Herkunft
-	//Werte 34,67,100: Wertebereich, aus dem Zufallswerte generiert werden, wird gedrittelt
 	private CarOriginDestination generateRandomDestination(CarOriginDestination  carOrigin){
 		
 		long i = (Math.round(Math.random()*100));
