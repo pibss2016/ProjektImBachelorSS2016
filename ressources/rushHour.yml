@@ -1,0 +1,3 @@
+laneLength: 10
+int waitingTime: 200
+carSpawnRate: 1
