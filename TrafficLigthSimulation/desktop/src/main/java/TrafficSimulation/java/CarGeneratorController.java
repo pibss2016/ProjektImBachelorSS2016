@@ -17,7 +17,9 @@ public class CarGeneratorController {
 	private ConcurrentLinkedQueue<CarController> carQueueWest;//Referenz auf Schlange fuer Einfahrt auf westliche Lane
 	private ConcurrentLinkedQueue<CarController> carQueueEast;//Referenz auf Schlange fuer Einfahrt auf oestliche Lane
 	
-	
+	public static final int FIRST_THIRD=34;
+	public static final int SEC_THIRD= 67;
+	public static final int THIRD_THIRD = 100;
 	/**
 	 * Konstruktor für Klasse CarGeneratorController.
 	 * @param model Referenz auf zentralles Datenmodell mit dem das erzeugte Auto interagieren soll
@@ -88,60 +90,60 @@ public class CarGeneratorController {
 		switch(carOrigin){
 			
 		case WEST:
-				if(i<34){
+				if(i<FIRST_THIRD){
                     return CarOriginDestination.NORTH;
 				}
 				
-				if(i<67){
+				if(i<SEC_THIRD){
                     return CarOriginDestination.SOUTH;
 				}
 				
-				if(i<=100){
+				if(i<=THIRD_THIRD){
                     return CarOriginDestination.EAST;
 				}
 				break;
 			    
 			    
 		case EAST:
-				if(i<34){
+				if(i<FRIST_THIRD){
                     return CarOriginDestination.NORTH;
 				}
 				
-				if(i<67){
+				if(i<SEC_THIRD){
                     return CarOriginDestination.SOUTH;
 				}
 				
-				if(i<=100){
+				if(i<=THIRD_THIRD){
                     return CarOriginDestination.WEST;
 				}
 				break;
 			   
 		case NORTH:
 				
-				if(i<34){
+				if(i<FIRST_THIRD){
                     return CarOriginDestination.WEST;
 				}
 				
-				if(i<67){
+				if(i<SEC_THIRD){
                     return CarOriginDestination.SOUTH;
 				}
 				
-				if(i<=100){
+				if(i<=THIRD_THIRD){
                     return CarOriginDestination.EAST;
 				}
 			    break;
 			    
 		case SOUTH:
 				
-				if(i<34){
+				if(i<FIRST_THIRD){
                     return CarOriginDestination.NORTH;
 				}
 				
-				if(i<67){
+				if(i<SECOND_THIRD){
                     return CarOriginDestination.WEST;
 				}
 				
-				if(i<=100){
+				if(i<=THIRD_THIRD){
                     return  CarOriginDestination.EAST;
 				}
 			    break; 
@@ -153,15 +155,15 @@ public class CarGeneratorController {
 	private int generateRandomSpeed(){
 		
 		long i = (Math.round(Math.random()*100));
-		if(i<34){
+		if(i<FIRST_THIRD){
 			return 1;
 		}
 		
-		if(i<67){
+		if(i<SEC_THIRD){
 			return 2;
 		}
 		
-		if(i<=100){
+		if(i<=THIRD_THIRD){
 
 			return 3;
 		}
