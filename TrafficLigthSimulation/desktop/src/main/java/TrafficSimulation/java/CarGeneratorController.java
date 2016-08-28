@@ -80,6 +80,7 @@ public class CarGeneratorController {
 	}
 	
 	//Erzeugt zufaelliges Ziel, beruecksichtigt Herkunft
+	//Werte 34,67,100: Wertebereich, aus dem Zufallswerte generiert werden, wird gedrittelt
 	private CarOriginDestination generateRandomDestination(CarOriginDestination  carOrigin){
 		
 		long i = (Math.round(Math.random()*100));
