@@ -278,7 +278,7 @@ public class CarController implements Runnable{
 				}
 			}
 			
-			
+			// 'o' := Feld ist leer/dort befindet sich KEIN Auto
 			if(posLength + 1 <= laneLength && lane.getLane()[posLength+1]=='o'){
 				
 				if(posLength + 2 <= laneLength && lane.getLane()[posLength+2]=='o'){
@@ -317,6 +317,7 @@ public class CarController implements Runnable{
 	}
     
 	/*Regelt das Verhalten des Autos beim Einfahren auf die Kreuzung*/
+	// 'o' := Feld ist leer/dort befindet sich KEIN Auto
 	private void handleEnterJunction(){
 		
 		synchronized(model){
@@ -425,6 +426,7 @@ public class CarController implements Runnable{
 	
 	/*Regelt abhaengig von Herkunft und Ziel des Autos ob das Auto
 	 *die Kreuzung nach rechts verlaesst oder geradeaus faehrt*/
+	 // 'o' := Feld ist leer/dort befindet sich KEIN Auto
 	private void handleLeaveRigth(){
 		
 		synchronized(model){
@@ -585,6 +587,7 @@ public class CarController implements Runnable{
 	
 	/*Regelt abhaengig von Herkunft und Ziel des Autos ob das Auto
 	 *die Kreuzung nach vorne verlaesst oder links abbiegt*/
+	 // 'o' := Feld ist leer/dort befindet sich KEIN Auto
 	private void handleLeaveForward(){
 		
 		synchronized(model){
@@ -702,6 +705,7 @@ public class CarController implements Runnable{
 	}
 	
 	/*Regelt nach dem Abbiegen nach Links das Verlassen der Kreuzung*/
+	// 'o' := Feld ist leer/dort befindet sich KEIN Auto
 	private void handleLeaveLeft(){
 		
 		synchronized(model){
@@ -790,6 +794,7 @@ public class CarController implements Runnable{
 	
 	/*Bewegt das Auto abhaengig des In der Methode checkLaneSpace angepassten Attributs carLaneState ueber die Lane,
 	 * oder loescht die Markierung des Autos auf der Lane wenn der Zustand DONE ist*/
+	 // 'o' := Feld ist leer/dort befindet sich KEIN Auto
 	private void move(){
 		synchronized(lane.getLane()){
 			
