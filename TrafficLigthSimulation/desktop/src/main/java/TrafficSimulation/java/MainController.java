@@ -190,123 +190,79 @@ public class MainController extends InputAdapter  implements ApplicationListener
     private void drawNorthOut(char[]lane){
     	
     	for (int i = 0;i<laneLength;i++){
-    		
-    		if (lane[i]=='Y'){ 	
-    			batch.draw(yellowCarNorth,(laneLength+1)*32,((laneLength+2)*32)+i*32);
-    		}
-
-    		if (lane[i]=='G'){ 	
-    			batch.draw(greenCarNorth,(laneLength+1)*32,((laneLength+2)*32)+i*32);
-    		}
-
-    		if (lane[i]=='B'){ 	
-    			batch.draw(blueCarNorth, (laneLength+1)*32,((laneLength+2)*32)+i*32);
-    		}
-
-    		if (lane[i]=='R'){ 	
-    			batch.draw(redCarNorth, (laneLength+1)*32,((laneLength+2)*32)+i*32);	
-    		}
-    		
-    		if (lane[i]=='X'){ 	
-    			batch.draw(grayCarNorth, (laneLength+1)*32,((laneLength+2)*32)+i*32);	
-    		}
-
-    		if (lane[i]=='o'){ 	
-    			batch.draw(street, (laneLength+1)*32,((laneLength+2)*32)+i*32);
+    		switch(lane[i]){
+    			case 'Y': batch.draw(yellowCarNorth,(laneLength+1)*32,((laneLength+2)*32)+i*32);
+    				  break;
+    			case 'G': batch.draw(greenCarNorth,(laneLength+1)*32,((laneLength+2)*32)+i*32);
+    				  break;
+    			case 'B': batch.draw(blueCarNorth,(laneLength+1)*32,((laneLength+2)*32)+i*32);
+    				  break;
+    			case 'R': batch.draw(redCarNorth,(laneLength+1)*32,((laneLength+2)*32)+i*32);
+    				  break;
+    			case 'X': batch.draw(grayCarNorth,(laneLength+1)*32,((laneLength+2)*32)+i*32);
+    				  break;
+    			case 'o': batch.draw(street,(laneLength+1)*32,((laneLength+2)*32)+i*32);
+    				  break;
     		}
     	}
     }
     
     private void drawSouthOut(char[]lane){
-    	
     	for (int i = 0;i<laneLength;i++){
-    		
-    		if (lane[i]=='Y'){ 	
-    			batch.draw(yellowCarSouth,(laneLength)*32,((laneLength-1)-i)*32);
-    		}
-
-    		if (lane[i]=='G'){ 	
-    			batch.draw(greenCarSouth,(laneLength)*32,((laneLength-1)-i)*32);
-    		}
-	
-    		if (lane[i]=='B'){ 	
-    			batch.draw(blueCarSouth,(laneLength)*32,((laneLength-1)-i)*32);
-    		}
-	
-    		if (lane[i]=='R'){ 	
-    			batch.draw(redCarSouth,(laneLength)*32,((laneLength-1)-i)*32);
-    		}
-    		
-    		if (lane[i]=='X'){ 	
-    			batch.draw(grayCarSouth,(laneLength)*32,((laneLength-1)-i)*32);
-    		}
-
-    		if (lane[i]=='o'){ 	
-    			batch.draw(street,(laneLength)*32,((laneLength-1)-i)*32);
+    		switch(lane[i]){
+    			case 'Y': batch.draw(yellowCarSouth,(laneLength)*32,((laneLength-1)-i)*32);
+    				  break;
+    			case 'G': batch.draw(greenCarSouth,(laneLength)*32,((laneLength-1)-i)*32);
+    				  break;
+    			case 'B': batch.draw(blueCarSouth,(laneLength)*32,((laneLength-1)-i)*32);
+    				  break;
+    			case 'R': batch.draw(redCarSouth,(laneLength)*32,((laneLength-1)-i)*32);
+    				  break;
+    			case 'X': batch.draw(grayCarSouth,(laneLength)*32,((laneLength-1)-i)*32);
+    				  break;
+    			case 'o': batch.draw(street,(laneLength)*32,((laneLength-1)-i)*32);
+    				  break;
     		}
     	}
     }
     
     private void drawWestOut(char[]lane){
-    	
     	for (int i = 0;i<laneLength;i++){
-    		
-    		if (lane[i]=='Y'){ 	
-    			batch.draw(yellowCarWest,(((laneLength-1)-i)*32),(laneLength+1)*32);
-    		}
-
-    		if (lane[i]=='B'){ 	
-    			batch.draw(blueCarWest,(((laneLength-1)-i)*32),(laneLength+1)*32);
-    		}
-    		
-    		if (lane[i]=='G'){ 	
-    			batch.draw(greenCarWest,(((laneLength-1)-i)*32),(laneLength+1)*32);
-    		}
-
-    		if (lane[i]=='R'){ 	
-    			batch.draw(redCarWest,(((laneLength-1)-i)*32),(laneLength+1)*32);
-    		}
-    		
-    		if (lane[i]=='X'){ 	
-    			batch.draw(grayCarWest,(((laneLength-1)-i)*32),(laneLength+1)*32);
-    		}
-	
-    		if (lane[i]=='o'){ 	
-    			batch.draw(street,(((laneLength-1)-i)*32),(laneLength+1)*32);
+    		switch(lane[i]){
+    			case 'Y': batch.draw(yellowCarWest,(((laneLength-1)-i)*32),(laneLength+1)*32);
+    				  break;
+    			case 'B': batch.draw(blueCarWest,(((laneLength-1)-i)*32),(laneLength+1)*32);
+    				  break;
+    			case 'G': batch.draw(greenCarWest,(((laneLength-1)-i)*32),(laneLength+1)*32);
+    				  break;
+    			case 'R': batch.draw(redCarWest,(((laneLength-1)-i)*32),(laneLength+1)*32);
+    				  break;
+    			case 'X': batch.draw(grayCarWest,(((laneLength-1)-i)*32),(laneLength+1)*32);
+    				  break;
+    			case 'o': batch.draw(street,(((laneLength-1)-i)*32),(laneLength+1)*32);
+    				  break;
     		}
     	}
     	
     }
 
 	private void drawEastOut(char[]lane){
-		
 		for (int i = 0;i<laneLength;i++){
-    		
-    		if (lane[i]=='Y'){ 	
-    			batch.draw(yellowCarEast,(laneLength+2+i)*32,laneLength*32);
+    			switch (lane[i]){
+    				case 'Y': batch.draw(yellowCarEast,(laneLength+2+i)*32,laneLength*32);
+    					  break;
+    				case 'B': batch.draw(blueCarEast,(laneLength+2+i)*32,laneLength*32);
+    					  break;
+    				case 'G': batch.draw(greenCarEast,(laneLength+2+i)*32,laneLength*32);
+    					  break;
+    				case 'R': batch.draw(redCarEast,(laneLength+2+i)*32,laneLength*32);
+    					  break;
+    				case 'X': batch.draw(grayCarEast,(laneLength+2+i)*32,laneLength*32);
+    					  break;
+    				case 'o': batch.draw(street,(laneLength+2+i)*32,laneLength*32);
+    					  break;
+    			}
     		}
-    		
-    		if (lane[i]=='B'){ 	
-    			batch.draw(blueCarEast,(laneLength+2+i)*32,laneLength*32);
-    		}
-	
-    		if (lane[i]=='G'){ 	
-    			batch.draw(greenCarEast,(laneLength+2+i)*32,laneLength*32);
-    		}
-
-    		if (lane[i]=='R'){ 	
-    			batch.draw(redCarEast,(laneLength+2+i)*32,laneLength*32);
-    		}
-    		
-    		if (lane[i]=='X'){ 	
-    			batch.draw(grayCarEast,(laneLength+2+i)*32,laneLength*32);
-    		}
- 
-    		if (lane[i]=='o'){ 	
-    			batch.draw(street,(laneLength+2+i)*32,laneLength*32);
-    		}
-    	}
-	
 	}
     
 	private void drawJunctionField(char[][] Junction,CarDirection[][] Direction,int h, int v){
