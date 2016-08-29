@@ -2,6 +2,13 @@ package TrafficSimulation.java;
 
 import com.badlogic.gdx.utils.Disposable;
 
+/**
+ * 
+ * 
+ * @author Khac Dat Tran
+ * 
+ */
+
 public interface Music extends Disposable {
 	
 	public void play ();
