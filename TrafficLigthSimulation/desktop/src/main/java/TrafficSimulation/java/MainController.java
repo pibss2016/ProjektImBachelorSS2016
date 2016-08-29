@@ -111,36 +111,28 @@ public class MainController extends InputAdapter  implements ApplicationListener
     	
     	for (int i = 1;i<=laneLength;i++){
     		
-    		if (lane[i-1]=='R'){
-    			 	
-    			batch.draw(redCarSouth, laneLength*32, ((laneLength*2)+2)*32-i*32);
+    		switch(lane[i-1]){
+    		
+    		case 'R': batch.draw(redCarSouth, laneLength*32, ((laneLength*2)+2)*32-i*32);
+    			  break;
+    			  
+    		case 'B': batch.draw(blueCarSouth, laneLength*32, ((laneLength*2)+2)*32-i*32);
+    			  break;
+    			  
+    		case 'G': batch.draw(greenCarSouth, laneLength*32, ((laneLength*2)+2)*32-i*32);
+			  break;
+			  
+		case 'Y': batch.draw(yellowCarSouth, laneLength*32, ((laneLength*2)+2)*32-i*32);
+			  break;
+			  
+		case 'X': batch.draw(grayCarSouth, laneLength*32, ((laneLength*2)+2)*32-i*32);
+			  break;
+			  
+		case 'o': batch.draw(street, laneLength*32, ((laneLength*2)+2)*32-i*32);
+			  break;
     		}
     		
-    		if (lane[i-1]=='B'){
-			 	
-    			batch.draw(blueCarSouth, laneLength*32, ((laneLength*2)+2)*32-i*32);
-    		}
-    		
-    		if (lane[i-1]=='G'){
-			 	
-    			batch.draw(greenCarSouth, laneLength*32, ((laneLength*2)+2)*32-i*32);
-    		}
-    		
-    		if (lane[i-1]=='Y'){
-			 	
-    			batch.draw(yellowCarSouth, laneLength*32, ((laneLength*2)+2)*32-i*32);
-    		}
-    		
-    		if (lane[i-1]=='X'){
-			 	
-    			batch.draw(grayCarSouth, laneLength*32, ((laneLength*2)+2)*32-i*32);
-    		}
-    		
-    		if (lane[i-1]=='o'){
-			 	
-    			batch.draw(street, laneLength*32, ((laneLength*2)+2)*32-i*32);
-    		}
-    	}	
+      	}	
     }
 
     private void drawSouthIn(char[]lane){
