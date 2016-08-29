@@ -104,7 +104,7 @@ public class CarGeneratorController {
 			    
 			    
 		case EAST:
-				if(i<FRIST_THIRD){
+				if(i<FIRST_THIRD){
                     return CarOriginDestination.NORTH;
 				}
 				
@@ -138,7 +138,7 @@ public class CarGeneratorController {
                     return CarOriginDestination.NORTH;
 				}
 				
-				if(i<SECOND_THIRD){
+				if(i<SEC_THIRD){
                     return CarOriginDestination.WEST;
 				}
 				
