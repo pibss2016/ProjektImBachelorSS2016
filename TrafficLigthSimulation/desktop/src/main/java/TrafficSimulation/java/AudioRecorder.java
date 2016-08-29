@@ -2,6 +2,12 @@ package TrafficSimulation.java;
 
 import com.badlogic.gdx.utils.Disposable;
 
+/**
+ * 
+ * 
+ * @author Khac Dat Tran
+ * 
+ */
 
 public interface AudioRecorder extends Disposable {
 	
