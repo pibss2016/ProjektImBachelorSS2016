@@ -22,9 +22,9 @@ public class DesktopLauncher {
 	Object object = reader.read();
 	Map map = (Map)object;
 	//Konfiguration aus Yaml-Datei wird gelesen
-	int laneLength = map.get("laneLength"); //Laenge der Lanes, muss >= 5 sein
-	int waitingTime = map.get("waitingTime");//Verzoegerung des Animationsablauf in Millisekunden; je kleiner waitingTime, desto höhere Geschwindigkeit von Autos
-	int carSpawnRate = map.get("carSpawnRate");// Anzahl der Iterationen der Simulation die zwischen dem Genrieren von 2 Autos durchgefuert werden; je kleiner carSpawnRate, desto mehr Autos erscheinen, aber es darf nicht kleiner als 1 sein
+	int laneLength = (int)map.get("laneLength"); //Laenge der Lanes, muss >= 5 sein
+	int waitingTime = (int)map.get("waitingTime");//Verzoegerung des Animationsablauf in Millisekunden; je kleiner waitingTime, desto höhere Geschwindigkeit von Autos
+	int carSpawnRate = (int)map.get("carSpawnRate");// Anzahl der Iterationen der Simulation die zwischen dem Genrieren von 2 Autos durchgefuert werden; je kleiner carSpawnRate, desto mehr Autos erscheinen, aber es darf nicht kleiner als 1 sein
         
         /**
         int laneLength = 10;//Laenge der Lanes, muss >= 5 sein
