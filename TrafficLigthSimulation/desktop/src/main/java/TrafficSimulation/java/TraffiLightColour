@@ -5,7 +5,7 @@
 * 
 * Klasse legt die Grundlage für eine Ampel fest
 */
-enum AmpelFarbe {
+enum TrafficLightColour {
   //Die verschiedenen Zustände einer Ampel
   ROT(5),  
   ROTGELB(3),
