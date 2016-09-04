@@ -1,0 +1,15 @@
+/**
+*
+*@author Nina Trilck
+*@version 1.0
+*/
+
+class TrafficLight{
+  private TrafficLightColour  lightStatus= TrafficLightColour.ROT;
+  
+  //Methode stellt Ampel auf nächsten Zustand  
+  public void changeLight()
+    {
+      lightStatus = lightStatus.switchToNext();
+    }
+}
