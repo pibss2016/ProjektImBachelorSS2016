@@ -1,0 +1,18 @@
+/**
+*
+*@author Nina Trilck
+*@version 1.0
+*/
+
+class Car{
+public CarColor colour;
+public int speed;
+public CarOriginDestination origin;
+public CarOriginDestination destination;
+//public CarState carState;
+//public CarJunctionState junctionState;
+
+//public Junctionposition j{unctionPosition;
+//public char[] langePosition; 
+
+}
