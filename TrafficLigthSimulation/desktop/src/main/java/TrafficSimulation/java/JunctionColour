@@ -1,0 +1,42 @@
+/**
+*
+* @author Nina Trilck
+* @version 1.0
+* 
+* Klasse legt die Grundlage für eine Ampel fest
+*/
+enum AmpelFarbe {
+  //Die verschiedenen Zustände einer Ampel
+  ROT(5),  
+  ROTGELB(3),
+  GRUEN(5),
+  GELB(3);
+  
+  //Dauer, über die ein Zustand aktiv ist
+  private int rtime;
+
+  //Konstruktor  
+  Ampel( int time ){
+    rtime = time;
+  }
+
+  //getter-Methode
+  int getTime(){
+    return rtime;
+  }
+  
+  //Methode wechselt die Zustände der Ampel in Reihenfolge einer normalen Ampelschaltung
+  AmpelFarbe switchToNext(){
+    switch(this){
+      case ROT:
+        return ROTGELB;
+      case ROTGELB :
+        return GRUEN;
+      case GRUEN:
+        return GELB;
+      case GELB;
+        return ROT;
+    }
+  }
+
+}
