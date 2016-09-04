@@ -12,7 +12,42 @@ public CarOriginDestination destination;
 //public CarState carState;
 //public CarJunctionState junctionState;
 
-//public Junctionposition j{unctionPosition;
+//public Junctionposition junctionPosition;
 //public char[] langePosition; 
+
+public Car(CarColor colour, int speed, CarOriginDestination origin, CarOriginDestination destination){
+  this.colour = colour;
+  this.speed = speed;
+  this.origin = origin;
+  this.destination = destination;
+}
+
+public int getSpeed(){
+  return speed;
+}
+
+private void setSpeed(int newspeed){
+  speed = newSpeed;
+}
+
+public CarColour getCarColour(){
+  return colour;
+}
+
+//public ..... getPosition(){
+//  return position;
+//}
+
+//private .... setPosition(    newPosition){
+//  position = newPosition 
+//}
+
+public CarOriginDestination getDestination(){
+
+}
+
+public CarOriginDestination getOrigin(){
+
+}
 
 }
