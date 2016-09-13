@@ -50,5 +50,11 @@ public CarOriginDestination getDestination(){
 public CarOriginDestination getOrigin(){
 
 }
+//Initialisierung in Simulation
+public void init(){
+// newSprite(<Bild>);
+}
+public Sprite getSprite(){
+}
 
 }
