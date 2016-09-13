@@ -5,6 +5,16 @@
 */
 class CarBehaviour {
 
+public void driveStraightForward(){
 
+}
+
+public void turningLeft(){
+
+}
+
+public void turningRight(){
+
+}
 
 }
