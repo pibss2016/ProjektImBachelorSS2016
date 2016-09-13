@@ -9,6 +9,7 @@ public CarColor colour;
 public int speed;
 public CarOriginDestination origin;
 public CarOriginDestination destination;
+public final int MAX_SPEED = 3;
 //public CarState carState;
 //public CarJunctionState junctionState;
 
