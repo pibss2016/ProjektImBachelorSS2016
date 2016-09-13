@@ -1,0 +1,10 @@
+/**
+*
+*@author Nina Trilck
+* Die Klasse soll das Abbiegeverhalten der Autos steuern
+*/
+class CarBehaviour {
+
+
+
+}
