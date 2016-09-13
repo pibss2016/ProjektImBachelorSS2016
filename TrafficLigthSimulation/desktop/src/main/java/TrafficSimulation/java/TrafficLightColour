@@ -4,6 +4,7 @@
 * @version 1.0
 * 
 * Klasse legt die Grundlage für eine Ampel fest
+*Soll u.a. JunctionController ersetzen oder unterstützen
 */
 enum TrafficLightColour {
   //Die verschiedenen Zustände einer Ampel
