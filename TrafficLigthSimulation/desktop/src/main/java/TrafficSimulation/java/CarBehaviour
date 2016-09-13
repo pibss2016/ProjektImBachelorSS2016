@@ -6,7 +6,16 @@
 class CarBehaviour {
 
 public void driveStraightForward(){
-
+//for(int i=0; i<=mySpeed; i++){
+//
+//if (lane[meinPlatz + i]=1 ){       =1, weil Lane nur noch mit 1 oder 0 und nicht mehr mit Buchstaben besetzt sein soll
+//  int myNewSpeed = getCar auf lane[meinPlatz + i].getSpeed;
+//  setmySpeed(myNewSpeed);
+//}
+//else{
+//    Car.setSpeed(MAX_SPEED);
+//}
+//}
 }
 
 public void turningLeft(){
