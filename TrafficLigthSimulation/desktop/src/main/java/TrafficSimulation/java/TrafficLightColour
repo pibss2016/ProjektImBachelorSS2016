@@ -26,7 +26,7 @@ enum TrafficLightColour {
   }
   
   //Methode wechselt die Zustände der Ampel in Reihenfolge einer normalen Ampelschaltung
-  AmpelFarbe switchToNext(){
+  TrafficLightColour switchToNext(){
     switch(this){
       case ROT:
         return ROTGELB;
