@@ -1,0 +1,35 @@
+enum ChangeOfDirection{
+NORD,
+OST,
+SUED,
+WEST;
+
+//gibt Zielrichtung am bzw. Ziellane bei Linksabbiegen
+ChangeOfDirection tLeft(){
+  switch(this){
+    case NORD:
+      return OST;
+    case OST :
+      return SUED;
+    case SUED:
+      return WEST;
+    case WEST:
+      return NORD;
+  }
+}
+
+//gibt Zielrichtung am bzw. Ziellane bei Rechtsabbiegen
+ChangeOfDirection tRight(){
+  switch(this){
+    case NORD:
+      return WEST;
+    case WEST:
+      return SUED;
+    case SUED:
+      return OST;
+    case OST:
+      return NORD;
+  }
+}
+
+}
