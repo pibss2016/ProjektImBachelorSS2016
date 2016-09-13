@@ -34,7 +34,7 @@ enum TrafficLightColour {
         return GRUEN;
       case GRUEN:
         return GELB;
-      case GELB;
+      case GELB:
         return ROT;
     }
   }
