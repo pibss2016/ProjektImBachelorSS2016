@@ -639,7 +639,7 @@ public class MainController extends InputAdapter  implements ApplicationListener
 				break;		
 		}
 		
-		switch(westTrafficLigthColor){
+		switch(eastTrafficLigthColor){
 		
 			case RED:
 				batch.draw(eastTrafficRed,(laneLength+3)*32,(laneLength+2)*32);
