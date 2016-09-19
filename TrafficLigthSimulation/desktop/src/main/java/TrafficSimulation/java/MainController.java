@@ -12,12 +12,20 @@ import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.audio.Sound;
 
+/**
+ * Main Class für Objekte und Sound durch Libgdx erstellen
+ * 
+ * @author Nikita Maslov
+ * @author Khac Dat Tran
+ * @author Nina Trilck
+ */
+
 public class MainController extends InputAdapter  implements ApplicationListener {
     
-	private int laneLength;
-	private int waitingTime;
-	private int initialWaitingTime;
-	private int carSpawnRate;
+    private int laneLength;
+    private int waitingTime;
+    private int initialWaitingTime;
+    private int carSpawnRate;
     private CentralModel model;
     private CentralSimulationController modelController;
     
@@ -32,6 +40,7 @@ public class MainController extends InputAdapter  implements ApplicationListener
     private TrafficLigthColor northTrafficLigthColor;
     private TrafficLigthColor southTrafficLigthColor;
     private TrafficLigthColor westTrafficLigthColor;
+    private TrafficLigthColor eastTrafficLigthColor;
     
     private TextureRegion street;
     
@@ -584,6 +593,7 @@ public class MainController extends InputAdapter  implements ApplicationListener
 		northTrafficLigthColor=model.getViewNorthTrafficLigthColor();
 		southTrafficLigthColor=model.getViewSouthTrafficLigthColor();
 		westTrafficLigthColor=model.getViewWestTrafficLigthColor();
+		eastTrafficLigthColor=model.getViewEastTrafficLigthColor();
 		
 		switch(northTrafficLigthColor){
 			
