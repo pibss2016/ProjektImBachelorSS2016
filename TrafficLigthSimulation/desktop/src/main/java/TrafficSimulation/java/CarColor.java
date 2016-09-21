@@ -4,6 +4,8 @@ package TrafficSimulation.java;
  * 
  * @author Nikita Maslov
  * @version 1.0
+ * @author Khac Dat Tran
+ * @version 1.1
  */
 public enum CarColor {
 	GREEN,
