@@ -9,6 +9,9 @@ public class CarController implements Runnable{
 	 *
 	 * @author Nikita Maslov
 	 * @version 1.0
+	 * @author Khac Dat Tran
+	 * @author Nina Trilck
+	 * @version 1.1
 	 */
     private int speed;//Tempo des Autos
     private CentralModel model;//Referenz auf Zentrales Modell
