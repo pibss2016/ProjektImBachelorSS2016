@@ -142,7 +142,7 @@ public class CentralModel {
 	
 	/**
      * Get Methode fuer Laenge der Lanes.
-     * Relevant für Visualisierung.
+     * Relevant fÃ¼r Visualisierung.
      * 
      * @return Laenge der Lanes
      */
@@ -154,8 +154,8 @@ public class CentralModel {
 	/**
      * Gibt die 4 Felder der Kreuzng als char[1][1] Matrix aus.
      * Moegliche Werte der Felder: R = Rotes Auto, G = Gruenes Auto,
-     * Y = Gelbes Auto, B = Blaues Auto, o = Kein Auto auf Feld.
-     * Relevant für Visualisierung.
+     * Y = Gelbes Auto, B = Blaues Auto, X = Graues Auto, o = Kein Auto auf Feld.
+     * Relevant fÃ¼r Visualisierung.
      * 
      * @return Laenge der Lanes
      */
@@ -174,8 +174,8 @@ public class CentralModel {
 	/**
      * Gibt Lane die aus dem Norden kommt und in die Kreuzung reinfuehrt aus.
      * Moegliche Werte der Felder: R = Rotes Auto, G = Gruenes Auto,
-     * Y = Gelbes Auto, B = Blaues Auto, o = Kein Auto auf Feld.
-     * Relevant für Visualisierung.
+     * Y = Gelbes Auto, B = Blaues Auto, X = Graues Auto, o = Kein Auto auf Feld.
+     * Relevant fÃ¼r Visualisierung.
      * 
      * @return Lane die aus dem Norden kommt und in die Kreuzung reinfuehrt
      */
@@ -186,8 +186,8 @@ public class CentralModel {
 	/**
      * Gibt Lane die aus dem Sueden kommt und in die Kreuzung reinfuehrt aus.
      * Moegliche Werte der Felder: R = Rotes Auto, G = Gruenes Auto,
-     * Y = Gelbes Auto, B = Blaues Auto, o = Kein Auto auf Feld.
-     * Relevant für Visualisierung.
+     * Y = Gelbes Auto, B = Blaues Auto, X = Graues Auto, o = Kein Auto auf Feld.
+     * Relevant fÃ¼r Visualisierung.
      * 
      * @return Lane die aus dem Sueden kommt und in die Kreuzung reinfuehrt
      */
@@ -198,8 +198,8 @@ public class CentralModel {
 	/**
      * Gibt Lane die aus dem Osten kommt und in die Kreuzung reinfuehrt aus.
      * Moegliche Werte der Felder: R = Rotes Auto, G = Gruenes Auto,
-     * Y = Gelbes Auto, B = Blaues Auto, o = Kein Auto auf Feld.
-     * Relevant für Visualisierung.
+     * Y = Gelbes Auto, B = Blaues Auto, X = Graues Auto, o = Kein Auto auf Feld.
+     * Relevant fÃ¼r Visualisierung.
      * 
      * @return Lane die aus dem Osten kommt und in die Kreuzung reinfuehrt
      */
@@ -210,8 +210,8 @@ public class CentralModel {
 	/**
      * Gibt Lane die aus dem Westen kommt und in die Kreuzung reinfuehrt aus.
      * Moegliche Werte der Felder: R = Rotes Auto, G = Gruenes Auto,
-     * Y = Gelbes Auto, B = Blaues Auto, o = Kein Auto auf Feld.
-     * Relevant für Visualisierung.
+     * Y = Gelbes Auto, B = Blaues Auto, X = Graues Auto, o = Kein Auto auf Feld.
+     * Relevant fÃ¼r Visualisierung.
      * 
      * @return Lane die aus dem Westen kommt und in die Kreuzung reinfuehrt
      */
@@ -222,8 +222,8 @@ public class CentralModel {
 	/**
      * Gibt Lane die die Kreuzung in Richtung Norden verlaesst aus.
      * Moegliche Werte der Felder: R = Rotes Auto, G = Gruenes Auto,
-     * Y = Gelbes Auto, B = Blaues Auto, o = Kein Auto auf Feld.
-     * Relevant für Visualisierung.
+     * Y = Gelbes Auto, B = Blaues Auto, X = Graues Auto, o = Kein Auto auf Feld.
+     * Relevant fÃ¼r Visualisierung.
      * 
      * @return Lane die die Kreuzung in Richtung Norden verlaesst
      */
@@ -234,8 +234,8 @@ public class CentralModel {
 	/**
      * Gibt Lane die die Kreuzung in Richtung Sueden verlaesst aus.
      * Moegliche Werte der Felder: R = Rotes Auto, G = Gruenes Auto,
-     * Y = Gelbes Auto, B = Blaues Auto, o = Kein Auto auf Feld.
-     * Relevant für Visualisierung.
+     * Y = Gelbes Auto, B = Blaues Auto, X = Graues Auto, o = Kein Auto auf Feld.
+     * Relevant fÃ¼r Visualisierung.
      * 
      * @return Lane die die Kreuzung in Richtung Sueden verlaesst
      */
@@ -246,8 +246,8 @@ public class CentralModel {
 	/**
      * Gibt Lane die die Kreuzung in Richtung Osten verlaesst aus.
      * Moegliche Werte der Felder: R = Rotes Auto, G = Gruenes Auto,
-     * Y = Gelbes Auto, B = Blaues Auto, o = Kein Auto auf Feld.
-     * Relevant für Visualisierung.
+     * Y = Gelbes Auto, B = Blaues Auto, X = Graues Auto, o = Kein Auto auf Feld.
+     * Relevant fÃ¼r Visualisierung.
      * 
      * @return Lane die die Kreuzung in Richtung Osten verlaesst
      */
@@ -258,8 +258,8 @@ public class CentralModel {
 	/**
      * Gibt Lane die die Kreuzung in Richtung Westen verlaesst aus.
      * Moegliche Werte der Felder: R = Rotes Auto, G = Gruenes Auto,
-     * Y = Gelbes Auto, B = Blaues Auto, o = Kein Auto auf Feld.
-     * Relevant für Visualisierung.
+     * Y = Gelbes Auto, B = Blaues Auto, X = Graues Auto, o = Kein Auto auf Feld.
+     * Relevant fÃ¼r Visualisierung.
      * 
      * @return Lane die die Kreuzung in Richtung Westen verlaesst
      */
