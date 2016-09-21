@@ -20,7 +20,7 @@ import com.badlogic.gdx.audio.Sound;
  * @author Nina Trilck
  */
 
-public class MainController extends InputAdapter  implements ApplicationListener {
+public class MainController extends InputAdapter  implements ApplicationListener, Runnable {
     
     private int laneLength;
     private int waitingTime;
@@ -700,7 +700,8 @@ public class MainController extends InputAdapter  implements ApplicationListener
     	}
 	}
 	
-	@Override
+    //Mit diesem Method kann man durch die Tastatur das Tempo von Animation zu steuern
+    @Override
     public boolean keyDown(int keycode) {
        
 		if (keycode == Input.Keys.STAR) {
@@ -768,8 +769,10 @@ public class MainController extends InputAdapter  implements ApplicationListener
         }
         return false;
     }
-		
-	@Override
+	
+	
+    // Dieses Method einmal anrufen, um alle Datei zu laden	
+    @Override
     public void create() { 
     	
     	model = new CentralModel(laneLength); 
@@ -847,13 +850,17 @@ public class MainController extends InputAdapter  implements ApplicationListener
         grayCarSouthEast= atlas.findRegion("GrayCarSouthEast");
         
         font = new BitmapFont();
-        font.setColor(Color.BLACK);
+        font.setColor(Color.WHITE);
         Gdx.input.setInputProcessor(this);
         
         sound = Gdx.audio.newSound(Gdx.files.internal("trafficsound.mp3"));
 	sound.play();
     
-        
+    }
+    
+    @Override
+    public void run() {
+    	 modelController.runSimulation();
     }
 
     @Override
@@ -863,10 +870,11 @@ public class MainController extends InputAdapter  implements ApplicationListener
         sound.dispose();
     }
 
+    // Dieses Method wiederholt anrufen, um Programm zu laufen
     @Override
     public void render() {        
     	
-    	Gdx.gl.glClearColor(1, 1, 1, 1);
+    	Gdx.gl.glClearColor(0/255f, 51/255f, 0/255f, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         
         modelController.runSimulation();
