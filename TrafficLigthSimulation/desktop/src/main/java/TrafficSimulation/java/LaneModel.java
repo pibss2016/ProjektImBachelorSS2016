@@ -32,7 +32,7 @@ public class LaneModel{
 	/**
 	 * Get Methode fuer Array mit Positionen der Autos. Bedeutung
 	 * der Elemente des Arrays: B = Blaues Auto, G = gruenes Auto,
-	 * R = Rotes Auto, y = Gelbes Auto, o = kein Auto.
+	 * R = Rotes Auto, Y = Gelbes Auto, X = Graues Auto, o = kein Auto.
 	 * 
 	 * @return Array mit Positionen der Autos.
 	 */
