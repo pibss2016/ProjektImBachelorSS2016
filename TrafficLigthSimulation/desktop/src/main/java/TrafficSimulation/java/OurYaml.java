@@ -1,4 +1,4 @@
-package TrafficSimulation.java;
+/*package TrafficSimulation.java;
 
 import java.io.File;
 import java.io.IOException;
@@ -8,7 +8,7 @@ import java.net.URL;
 import java.text.MessageFormat;
 import java.util.Map;
 
-import org.yaml.snakeyaml.Yaml;
+import org.yaml.snakeyaml.Yaml;*/
 
 /**
  * 
@@ -16,7 +16,7 @@ import org.yaml.snakeyaml.Yaml;
  * @author Nina Trilck
  *
  */
-public class OurYaml {
+/*public class OurYaml {
 
 	 OurYaml(final String yaml_input) throws MalformedURLException, IOException, URISyntaxException
 	 {
@@ -40,3 +40,4 @@ public class OurYaml {
 	        }
 	    }
 }
+*/
