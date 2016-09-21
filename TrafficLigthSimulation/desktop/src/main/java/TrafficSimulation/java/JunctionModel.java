@@ -16,10 +16,10 @@ public class JunctionModel {
 	private TrafficLigthColor westTrafficLigthColor;//Farbe westliche Ampel
 	private TrafficLigthColor eastTrafficLigthColor;//Farbe oestliche Ampel
 	
-	private LeftSignal northLeftSignal; // Links abbiegen Signal für obere lane
-	private LeftSignal southLeftSignal; // Links abbiegen Signale für untere lane
-	private LeftSignal westLeftSignal; // Links abbiegen Signal für obere lane
-	private LeftSignal eastLeftSignal; // Links abbiegen Signale für untere lane
+	private LeftSignal northLeftSignal; // Links abbiegen Signal fÃ¼r obere lane
+	private LeftSignal southLeftSignal; // Links abbiegen Signale fÃ¼r untere lane
+	private LeftSignal westLeftSignal; // Links abbiegen Signal fÃ¼r obere lane
+	private LeftSignal eastLeftSignal; // Links abbiegen Signale fÃ¼r untere lane
 	
 	private char[][] JunctionField= {{'o','o'},{'o','o'}}; // Feld das angibt, welche Autos sich auf der Kreuzung befinden
 	private CarDirection[][] directionField= {{CarDirection.NONE,CarDirection.NONE},{CarDirection.NONE,CarDirection.NONE}}; // Feld das die Ausrichtung aller Autos auf der Kreuzung angibt
@@ -42,7 +42,7 @@ public class JunctionModel {
 	}
 	
 	/**
-     * Get Methode für noerdliches LinksAbbiegen Signal.
+     * Get Methode fÃ¼r noerdliches LinksAbbiegen Signal.
      * @return noerdliches LinksAbbiegen Signal
      */
 	public LeftSignal getNorthSignal(){
@@ -50,7 +50,7 @@ public class JunctionModel {
 	}
 	
 	/**
-     * Get Methode für suedliches LinksAbbiegen Signal.
+     * Get Methode fÃ¼r suedliches LinksAbbiegen Signal.
      * @return suedliches LinksAbbiegen Signal
      */
 	public LeftSignal getSouthSignal(){
@@ -58,7 +58,7 @@ public class JunctionModel {
 	}
 	
 	/**
-     * Get Methode für westliches LinksAbbiegen Signal.
+     * Get Methode fÃ¼r westliches LinksAbbiegen Signal.
      * @return westliches LinksAbbiegen Signal
      */
 	public LeftSignal getWestSignal(){
@@ -66,7 +66,7 @@ public class JunctionModel {
 	}
 	
 	/**
-     * Get Methode für oestliches LinksAbbiegen Signal.
+     * Get Methode fÃ¼r oestliches LinksAbbiegen Signal.
      * @return oestliches LinksAbbiegen Signal
      */
 	public LeftSignal getEastSignal(){
@@ -74,7 +74,7 @@ public class JunctionModel {
 	}
 	
 	/**
-     * Set Methode für noerdliches LinksAbbiegen Signal.
+     * Set Methode fÃ¼r noerdliches LinksAbbiegen Signal.
      * @param northSignal Signal mit dem noerdliches LinksAbbiegen Signal belegt wird.
      */
 	public void setNorthSignal(LeftSignal northSignal ){
@@ -82,7 +82,7 @@ public class JunctionModel {
 	}
 	
 	/**
-     * Set Methode für suedliches LinksAbbiegen Signal.
+     * Set Methode fÃ¼r suedliches LinksAbbiegen Signal.
      * @param southSignal Signal mit dem suedliches LinksAbbiegen Signal belegt wird.
      */
 	public void setSouthSignal(LeftSignal southSignal ){
@@ -90,7 +90,7 @@ public class JunctionModel {
 	}
 	
 	/**
-     * Set Methode für westliches LinksAbbiegen Signal.
+     * Set Methode fÃ¼r westliches LinksAbbiegen Signal.
      * @param westSignal Signal mit dem westliches LinksAbbiegen Signal belegt wird.
      */
 	public void setWestSignal(LeftSignal westSignal ){
@@ -98,7 +98,7 @@ public class JunctionModel {
 	}
 	
 	/**
-     * Set Methode für oestliches LinksAbbiegen Signal.
+     * Set Methode fÃ¼r oestliches LinksAbbiegen Signal.
      * @param eastSignal Signal mit dem oestliches LinksAbbiegen Signal belegt wird.
      */
 	public void setEastSignal(LeftSignal eastSignal ){
@@ -108,9 +108,9 @@ public class JunctionModel {
 	
 		
 	/**
-     * Get Methode für das Feld das angibt, welche Autos sich auf der Kreuzung befinden.
-     * Bedeutung der Elemnte: B = Blaues Auto, G = Grünes Auto,
-     * R = Rotes Auto, Y = Gelbes Auto, o = Kein Auto
+     * Get Methode fÃ¼r das Feld das angibt, welche Autos sich auf der Kreuzung befinden.
+     * Bedeutung der Elemnte: B = Blaues Auto, G = GrÃ¼nes Auto,
+     * R = Rotes Auto, Y = Gelbes Auto, X = Graues Auto, o = Kein Auto
      * @return Feld mit Autos auf der Kreuzung
      */
 	public char[][] getJunctionField(){
@@ -118,7 +118,7 @@ public class JunctionModel {
 	}
 	
 	/**
-     * Get Methode für Feld, das die Ausrichtung aller Autos auf der Kreuzung angibt.
+     * Get Methode fÃ¼r Feld, das die Ausrichtung aller Autos auf der Kreuzung angibt.
      * @return Feld mit Ausrichtung der Autos auf der Kreuzung
      */
 	public CarDirection[][] getDirectionField(){
@@ -126,7 +126,7 @@ public class JunctionModel {
 	}
 		
 	/**
-     * Get Methode für Farbe noerdlichen Ampel.
+     * Get Methode fÃ¼r Farbe noerdlichen Ampel.
      * @return Farbe noerdlichen Ampel
      */
 	public TrafficLigthColor getNorthTrafficLigthColor(){
@@ -134,7 +134,7 @@ public class JunctionModel {
 	}
 	
 	/**
-     * Get Methode für Farbe suedlichen Ampel.
+     * Get Methode fÃ¼r Farbe suedlichen Ampel.
      * @return Farbe suedlichen Ampel
      */
 	public TrafficLigthColor getSouthTrafficLigthColor(){
@@ -142,7 +142,7 @@ public class JunctionModel {
 	}
 	
 	/**
-     * Get Methode für Farbe westlichen Ampel.
+     * Get Methode fÃ¼r Farbe westlichen Ampel.
      * @return Farbe westlichen Ampel
      */
 	public TrafficLigthColor getWestTrafficLigthColor(){
@@ -150,7 +150,7 @@ public class JunctionModel {
 	}
 	
 	/**
-     * Get Methode für Farbe oestlichen Ampel.
+     * Get Methode fÃ¼r Farbe oestlichen Ampel.
      * @return Farbe oestlichen Ampel
      */
 	public TrafficLigthColor getEastTrafficLigthColor(){
@@ -158,7 +158,7 @@ public class JunctionModel {
 	}
 	
 	/**
-     * Set Methode für Farbe noerdlichen Ampel.
+     * Set Methode fÃ¼r Farbe noerdlichen Ampel.
      * @param color Farbe der Ampel
      */
 	public void setNorthTrafficLigthColor(TrafficLigthColor color){
@@ -166,7 +166,7 @@ public class JunctionModel {
 	}
 	
 	/**
-     * Set Methode für Farbe suedlichen Ampel.
+     * Set Methode fÃ¼r Farbe suedlichen Ampel.
      * @param color Farbe der Ampel
      */
 	public void setSouthTrafficLigthColor(TrafficLigthColor color){
@@ -174,7 +174,7 @@ public class JunctionModel {
 	}
 	
 	/**
-     * Set Methode für Farbe westlichen Ampel.
+     * Set Methode fÃ¼r Farbe westlichen Ampel.
      * @param color Farbe der Ampel
      */
 	public void setWestTrafficLigthColor(TrafficLigthColor color){
@@ -182,7 +182,7 @@ public class JunctionModel {
 	}
 	
 	/**
-     * Set Methode für Farbe oestlichen Ampel.
+     * Set Methode fÃ¼r Farbe oestlichen Ampel.
      * @param color Farbe der Ampel
      */
 	public void setEastTrafficLigthColor(TrafficLigthColor color){
