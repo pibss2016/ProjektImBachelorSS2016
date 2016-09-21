@@ -4,6 +4,13 @@ import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplicationConfiguration;
 import TrafficSimulation.java.MainController;
 
+/**
+ * Launcher Class für Programm laufen
+ * 
+ * @author Nikita Maslov
+ * @author Khac Dat Tran
+ * @author Nina Trilck
+ */
 
 public class DesktopLauncher {
 	public static void main (String[] args) {
@@ -35,5 +42,7 @@ public class DesktopLauncher {
         cfg.height = ((laneLength*2)+2)*32;
 
         new LwjglApplication(new MainController(laneLength ,waitingTime,carSpawnRate), cfg);
+        new Thread(new MainController(laneLength,waitingTime,carSpawnRate)).start();
+        
 	}
 }
