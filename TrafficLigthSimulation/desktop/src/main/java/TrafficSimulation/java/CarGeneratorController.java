@@ -6,8 +6,12 @@ import java.util.concurrent.ConcurrentLinkedQueue;
  * Klasse fuer Autogenerierung.
  * Erzeugt Autos mit zufaelliger Farbe, zufaelliger Herkunft
  * und zufaelligem Reiseziel und zufaelliger Geschwindigkeit.
+ * 
  * @author Nikita Maslov
  * @version 1.0
+ * @author Khac Dat Tran
+ * @author Nina Trilck
+ * @version 1.1
  */
 public class CarGeneratorController {
 	
